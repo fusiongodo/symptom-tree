@@ -1,0 +1,1455 @@
+{
+ "blind": "[Q01] Which area fits the score best?\n   1. How I am overall  → Q02\n   2. Tiredness and energy  → Q03\n   3. How bad my crashes are after doing too much  → END\n   4. Thinking and concentration (brain fog)  → Q05\n   5. Sleep  → Q10\n   6. Pain (also headache, chest pain)  → Q13\n   7. Heart, circulation and breathing  → Q15\n   8. What I can do in daily life  → Q16\n   9. Mood and emotions  → Q20\n   10. Other body symptoms (senses, muscles, stomach, temperature, feeling ill)  → Q21\n\n[Q02] When you give the score a high value, what are you rating?\n   1. How good my health is overall  → END\n   2. How much the illness restricts me overall  → END\n   3. How much my health limits my social life  → END\n\n[Q03] When you give the score a high value, what are you rating?\n   1. How tired or energetic I feel overall  → END\n   2. How fast I run out of steam while doing something  → Q04\n   3. How bad my crashes are after doing too much  → END\n   4. How much I did (activity / energy used)  → END\n\n[Q04] Which one does the score measure?\n   1. How fast my body tires  → END\n   2. How fast my mind tires  → END\n\n[Q05] When you give the score a high value, what are you rating?\n   1. My concentration  → Q06\n   2. How fast and clearly I think and understand  → Q07\n   3. My memory  → Q08\n   4. Language: words and expressing myself  → Q09\n   5. How fast my mind tires  → END\n   6. Brain fog in general  → END\n\n[Q06] Which one does the score measure?\n   1. Staying focused on one thing  → END\n   2. Following several things at once  → END\n\n[Q07] Which one does the score measure?\n   1. How fast my thinking is  → END\n   2. Understanding what I read or hear  → END\n   3. Feeling confused or disoriented  → END\n\n[Q08] Which one does the score measure?\n   1. Remembering things  → END\n   2. Working things out in my head  → END\n\n[Q09] Which one does the score measure?\n   1. Finding the right words  → END\n   2. Putting thoughts into words  → END\n\n[Q10] When you give the score a high value, what are you rating?\n   1. Something that happens at night  → Q11\n   2. How rested or sleepy I am during the day  → Q12\n   3. My sleep in general  → END\n\n[Q11] Which one does the score measure?\n   1. How hard it was to fall asleep  → END\n   2. How often or long I was awake in the night  → END\n   3. How much too early I woke up  → END\n   4. How much my sleep shifted into the day  → END\n\n[Q12] Which one does the score measure?\n   1. How unrested I feel after waking  → END\n   2. How sleepy I am or how much I need to nap in the day  → END\n\n[Q13] When you give the score a high value, what are you rating?\n   1. How strong the pain is  → Q14\n   2. How much the pain gets in the way of my day  → END\n   3. How stiff I feel  → END\n   4. How sensitive I am to pain  → END\n\n[Q14] Where is the pain?\n   1. Muscle pain  → END\n   2. Joint pain  → END\n   3. Headache  → END\n   4. Pain in or behind my eyes  → END\n   5. Chest pain  → END\n   6. Belly pain  → END\n   7. Pain all over / it moves around  → END\n\n[Q15] Which one does the score measure?\n   1. How unwell I get when sitting or standing upright  → END\n   2. Feeling dizzy or faint  → END\n   3. Fast or irregular heartbeat  → END\n   4. My heart rate measured by a watch or sensor  → END\n   5. Shortness of breath  → END\n   6. Heart, circulation or breathing problems in general  → END\n\n[Q16] When you give the score a high value, what are you rating?\n   1. What my body can manage physically  → Q17\n   2. A specific everyday activity  → Q18\n   3. How much my health or emotions limit me  → Q19\n   4. How well I stay within my limits (pacing)  → END\n   5. How much I did (activity / energy used)  → END\n\n[Q17] Which one does the score measure?\n   1. How long I can sit or stand before I must lie down  → END\n   2. How far I can walk  → END\n   3. How much physical effort I can manage  → END\n\n[Q18] Which activity?\n   1. Washing, dressing, toilet  → END\n   2. Housework or cooking  → END\n   3. Getting out of the house (errands, shopping, transport)  → END\n   4. Exercise or sport  → END\n\n[Q19] Which one does the score measure?\n   1. How much my health limits my work or daily tasks  → END\n   2. How much my emotions limit my work or daily tasks  → END\n   3. How much my health limits my social life  → END\n\n[Q20] When you give the score a high value, what are you rating?\n   1. How good or low my mood is  → END\n   2. How anxious or calm I feel  → END\n   3. How stressed I feel  → END\n   4. How much my emotions limit my work or daily tasks  → END\n   5. How I feel emotionally in general  → END\n\n[Q21] Which fits the score best?\n   1. Senses and vision (light, noise, seeing, smell, taste)  → Q22\n   2. Muscles and movement  → Q25\n   3. Stomach and bowel  → Q26\n   4. Bladder  → Q27\n   5. Temperature, sweating, appetite and weight  → Q28\n   6. Feeling ill, infections, sensitivities to smells or chemicals  → Q32\n   7. Something else (e.g. cough, skin, hair loss)  → END\n\n[Q22] When you give the score a high value, what are you rating?\n   1. How much light, noise or vibration bothers me  → Q23\n   2. How well I see  → Q24\n   3. Smell or taste (weaker, lost or changed)  → END\n   4. Pain in or behind my eyes  → END\n\n[Q23] What bothers you?\n   1. Light  → END\n   2. Noise  → END\n   3. Vibration or shaking (e.g. in a car)  → END\n   4. Reacting to smells, chemicals, foods or mold  → END\n\n[Q24] Which one does the score measure?\n   1. How sharp and clear I see  → END\n   2. Judging distances  → END\n\n[Q25] When you give the score a high value, what are you rating?\n   1. How weak my muscles are  → END\n   2. Muscle twitches  → END\n   3. How clumsy I am  → END\n   4. Feeling unsteady on my feet  → END\n   5. How fast my body tires  → END\n   6. Muscle pain  → END\n\n[Q26] Which one does the score measure?\n   1. Feeling sick (nausea)  → END\n   2. Diarrhoea, constipation, cramps  → END\n   3. Bloating  → END\n   4. Belly pain  → END\n\n[Q27] What about your bladder?\n   1. Sudden strong urge to go  → END\n   2. Waking up at night to go  → END\n   3. Bladder problems in general  → END\n\n[Q28] When you give the score a high value, what are you rating?\n   1. Feeling cold or hot  → Q29\n   2. Sweating  → Q30\n   3. Appetite or weight  → Q31\n   4. Reacting badly to alcohol  → END\n\n[Q29] Which one does the score measure?\n   1. Feeling cold or shivery  → END\n   2. Feeling hot or feverish  → END\n   3. Swinging between hot and cold  → END\n   4. Coping badly with heat or cold  → END\n   5. Fever  → END\n\n[Q30] Where or when?\n   1. Sweaty hands  → END\n   2. Sweating at night  → END\n   3. Sweating in general  → END\n\n[Q31] Which one does the score measure?\n   1. Little appetite  → END\n   2. Losing weight  → END\n   3. Gaining weight  → END\n   4. My weight itself (e.g. from a scale)  → END\n\n[Q32] When you give the score a high value, what are you rating?\n   1. Feeling ill (flu-like, throat, glands, fever)  → Q33\n   2. How often I get infections  → END\n   3. Reacting to smells, chemicals, foods or mold  → END\n\n[Q33] Which one does the score measure?\n   1. Feeling flu-like  → END\n   2. Sore throat  → END\n   3. Swollen or tender glands  → END\n   4. Fever  → END\n",
+ "key": {
+  "Q01.1": {
+   "node": "N0",
+   "a": "How I am overall",
+   "to": "GL-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.2": {
+   "node": "N0",
+   "a": "Tiredness and energy",
+   "to": "EN-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.3": {
+   "node": "N0",
+   "a": "How bad my crashes are after doing too much",
+   "to": "leaf",
+   "g": "EN4",
+   "facet": "",
+   "construct": "PEM",
+   "flags": ""
+  },
+  "Q01.4": {
+   "node": "N0",
+   "a": "Thinking and concentration (brain fog)",
+   "to": "CG-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.5": {
+   "node": "N0",
+   "a": "Sleep",
+   "to": "SL-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.6": {
+   "node": "N0",
+   "a": "Pain (also headache, chest pain)",
+   "to": "PN-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.7": {
+   "node": "N0",
+   "a": "Heart, circulation and breathing",
+   "to": "AU-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.8": {
+   "node": "N0",
+   "a": "What I can do in daily life",
+   "to": "PF-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.9": {
+   "node": "N0",
+   "a": "Mood and emotions",
+   "to": "MO-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q01.10": {
+   "node": "N0",
+   "a": "Other body symptoms (senses, muscles, stomach, temperature, feeling ill)",
+   "to": "BD-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q02.1": {
+   "node": "GL-N1",
+   "a": "How good my health is overall",
+   "to": "leaf",
+   "g": "GL1",
+   "facet": "",
+   "construct": "GLO",
+   "flags": ""
+  },
+  "Q02.2": {
+   "node": "GL-N1",
+   "a": "How much the illness restricts me overall",
+   "to": "leaf",
+   "g": "GL2",
+   "facet": "",
+   "construct": "GLO",
+   "flags": ""
+  },
+  "Q02.3": {
+   "node": "GL-N1",
+   "a": "How much my health limits my social life",
+   "to": "leaf",
+   "g": "GL4",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q03.1": {
+   "node": "EN-N1",
+   "a": "How tired or energetic I feel overall",
+   "to": "leaf",
+   "g": "EN1",
+   "facet": "",
+   "construct": "FAT",
+   "flags": ""
+  },
+  "Q03.2": {
+   "node": "EN-N1",
+   "a": "How fast I run out of steam while doing something",
+   "to": "EN-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q03.3": {
+   "node": "EN-N1",
+   "a": "How bad my crashes are after doing too much",
+   "to": "leaf",
+   "g": "EN4",
+   "facet": "",
+   "construct": "PEM",
+   "flags": ""
+  },
+  "Q03.4": {
+   "node": "EN-N1",
+   "a": "How much I did (activity / energy used)",
+   "to": "leaf",
+   "g": "EN5",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q04.1": {
+   "node": "EN-N2",
+   "a": "How fast my body tires",
+   "to": "leaf",
+   "g": "EN2",
+   "facet": "",
+   "construct": "FAT",
+   "flags": ""
+  },
+  "Q04.2": {
+   "node": "EN-N2",
+   "a": "How fast my mind tires",
+   "to": "leaf",
+   "g": "EN3",
+   "facet": "",
+   "construct": "FAT",
+   "flags": ""
+  },
+  "Q05.1": {
+   "node": "CG-N1",
+   "a": "My concentration",
+   "to": "CG-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q05.2": {
+   "node": "CG-N1",
+   "a": "How fast and clearly I think and understand",
+   "to": "CG-N3",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q05.3": {
+   "node": "CG-N1",
+   "a": "My memory",
+   "to": "CG-N4",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q05.4": {
+   "node": "CG-N1",
+   "a": "Language: words and expressing myself",
+   "to": "CG-N5",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q05.5": {
+   "node": "CG-N1",
+   "a": "How fast my mind tires",
+   "to": "leaf",
+   "g": "EN3",
+   "facet": "",
+   "construct": "FAT",
+   "flags": ""
+  },
+  "Q05.6": {
+   "node": "CG-N1",
+   "a": "Brain fog in general",
+   "to": "leaf",
+   "g": "COG",
+   "facet": "",
+   "construct": "COG",
+   "flags": "construct level"
+  },
+  "Q06.1": {
+   "node": "CG-N2",
+   "a": "Staying focused on one thing",
+   "to": "leaf",
+   "g": "CG1",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q06.2": {
+   "node": "CG-N2",
+   "a": "Following several things at once",
+   "to": "leaf",
+   "g": "CG2",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q07.1": {
+   "node": "CG-N3",
+   "a": "How fast my thinking is",
+   "to": "leaf",
+   "g": "CG3",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q07.2": {
+   "node": "CG-N3",
+   "a": "Understanding what I read or hear",
+   "to": "leaf",
+   "g": "CG4",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q07.3": {
+   "node": "CG-N3",
+   "a": "Feeling confused or disoriented",
+   "to": "leaf",
+   "g": "CG9",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q08.1": {
+   "node": "CG-N4",
+   "a": "Remembering things",
+   "to": "leaf",
+   "g": "CG5",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q08.2": {
+   "node": "CG-N4",
+   "a": "Working things out in my head",
+   "to": "leaf",
+   "g": "CG8",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q09.1": {
+   "node": "CG-N5",
+   "a": "Finding the right words",
+   "to": "leaf",
+   "g": "CG6",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q09.2": {
+   "node": "CG-N5",
+   "a": "Putting thoughts into words",
+   "to": "leaf",
+   "g": "CG7",
+   "facet": "",
+   "construct": "COG",
+   "flags": ""
+  },
+  "Q10.1": {
+   "node": "SL-N1",
+   "a": "Something that happens at night",
+   "to": "SL-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q10.2": {
+   "node": "SL-N1",
+   "a": "How rested or sleepy I am during the day",
+   "to": "SL-N3",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q10.3": {
+   "node": "SL-N1",
+   "a": "My sleep in general",
+   "to": "leaf",
+   "g": "SLP",
+   "facet": "",
+   "construct": "SLP",
+   "flags": "construct level"
+  },
+  "Q11.1": {
+   "node": "SL-N2",
+   "a": "How hard it was to fall asleep",
+   "to": "leaf",
+   "g": "SL1",
+   "facet": "",
+   "construct": "SLP",
+   "flags": ""
+  },
+  "Q11.2": {
+   "node": "SL-N2",
+   "a": "How often or long I was awake in the night",
+   "to": "leaf",
+   "g": "SL2",
+   "facet": "",
+   "construct": "SLP",
+   "flags": ""
+  },
+  "Q11.3": {
+   "node": "SL-N2",
+   "a": "How much too early I woke up",
+   "to": "leaf",
+   "g": "SL3",
+   "facet": "",
+   "construct": "SLP",
+   "flags": ""
+  },
+  "Q11.4": {
+   "node": "SL-N2",
+   "a": "How much my sleep shifted into the day",
+   "to": "leaf",
+   "g": "SL6",
+   "facet": "",
+   "construct": "SLP",
+   "flags": ""
+  },
+  "Q12.1": {
+   "node": "SL-N3",
+   "a": "How unrested I feel after waking",
+   "to": "leaf",
+   "g": "SL4",
+   "facet": "",
+   "construct": "SLP",
+   "flags": ""
+  },
+  "Q12.2": {
+   "node": "SL-N3",
+   "a": "How sleepy I am or how much I need to nap in the day",
+   "to": "leaf",
+   "g": "SL5",
+   "facet": "",
+   "construct": "SLP",
+   "flags": ""
+  },
+  "Q13.1": {
+   "node": "PN-N1",
+   "a": "How strong the pain is",
+   "to": "PN-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q13.2": {
+   "node": "PN-N1",
+   "a": "How much the pain gets in the way of my day",
+   "to": "leaf",
+   "g": "PN2",
+   "facet": "",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q13.3": {
+   "node": "PN-N1",
+   "a": "How stiff I feel",
+   "to": "leaf",
+   "g": "PN3",
+   "facet": "",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q13.4": {
+   "node": "PN-N1",
+   "a": "How sensitive I am to pain",
+   "to": "leaf",
+   "g": "PN4",
+   "facet": "",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.1": {
+   "node": "PN-N2",
+   "a": "Muscle pain",
+   "to": "leaf",
+   "g": "PN1 [region: muscles]",
+   "facet": "region: muscles",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.2": {
+   "node": "PN-N2",
+   "a": "Joint pain",
+   "to": "leaf",
+   "g": "PN1 [region: joints]",
+   "facet": "region: joints",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.3": {
+   "node": "PN-N2",
+   "a": "Headache",
+   "to": "leaf",
+   "g": "PN1 [region: head]",
+   "facet": "region: head",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.4": {
+   "node": "PN-N2",
+   "a": "Pain in or behind my eyes",
+   "to": "leaf",
+   "g": "PN1 [region: eyes]",
+   "facet": "region: eyes",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.5": {
+   "node": "PN-N2",
+   "a": "Chest pain",
+   "to": "leaf",
+   "g": "PN1 [region: chest]",
+   "facet": "region: chest",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.6": {
+   "node": "PN-N2",
+   "a": "Belly pain",
+   "to": "leaf",
+   "g": "PN1 [region: abdomen]",
+   "facet": "region: abdomen",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q14.7": {
+   "node": "PN-N2",
+   "a": "Pain all over / it moves around",
+   "to": "leaf",
+   "g": "PN1 [region: unspecified]",
+   "facet": "region: unspecified",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q15.1": {
+   "node": "AU-N2",
+   "a": "How unwell I get when sitting or standing upright",
+   "to": "leaf",
+   "g": "AU1",
+   "facet": "",
+   "construct": "CAR",
+   "flags": ""
+  },
+  "Q15.2": {
+   "node": "AU-N2",
+   "a": "Feeling dizzy or faint",
+   "to": "leaf",
+   "g": "AU2",
+   "facet": "",
+   "construct": "CAR",
+   "flags": ""
+  },
+  "Q15.3": {
+   "node": "AU-N2",
+   "a": "Fast or irregular heartbeat",
+   "to": "leaf",
+   "g": "AU3",
+   "facet": "",
+   "construct": "CAR",
+   "flags": ""
+  },
+  "Q15.4": {
+   "node": "AU-N2",
+   "a": "My heart rate measured by a watch or sensor",
+   "to": "leaf",
+   "g": "AU3 [measure: device]",
+   "facet": "measure: device",
+   "construct": "CAR",
+   "flags": "measured, not rated"
+  },
+  "Q15.5": {
+   "node": "AU-N2",
+   "a": "Shortness of breath",
+   "to": "leaf",
+   "g": "AU4",
+   "facet": "",
+   "construct": "CAR",
+   "flags": ""
+  },
+  "Q15.6": {
+   "node": "AU-N2",
+   "a": "Heart, circulation or breathing problems in general",
+   "to": "leaf",
+   "g": "CAR",
+   "facet": "",
+   "construct": "CAR",
+   "flags": "construct level"
+  },
+  "Q16.1": {
+   "node": "PF-N1",
+   "a": "What my body can manage physically",
+   "to": "PF-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q16.2": {
+   "node": "PF-N1",
+   "a": "A specific everyday activity",
+   "to": "PF-N3",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q16.3": {
+   "node": "PF-N1",
+   "a": "How much my health or emotions limit me",
+   "to": "PF-N4",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q16.4": {
+   "node": "PF-N1",
+   "a": "How well I stay within my limits (pacing)",
+   "to": "leaf",
+   "g": "PF5",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q16.5": {
+   "node": "PF-N1",
+   "a": "How much I did (activity / energy used)",
+   "to": "leaf",
+   "g": "EN5",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q17.1": {
+   "node": "PF-N2",
+   "a": "How long I can sit or stand before I must lie down",
+   "to": "leaf",
+   "g": "PF1",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q17.2": {
+   "node": "PF-N2",
+   "a": "How far I can walk",
+   "to": "leaf",
+   "g": "PF2",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q17.3": {
+   "node": "PF-N2",
+   "a": "How much physical effort I can manage",
+   "to": "leaf",
+   "g": "PF3",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q18.1": {
+   "node": "PF-N3",
+   "a": "Washing, dressing, toilet",
+   "to": "leaf",
+   "g": "PF1, PF3 [activity: self-care]",
+   "facet": "activity: self-care",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q18.2": {
+   "node": "PF-N3",
+   "a": "Housework or cooking",
+   "to": "leaf",
+   "g": "PF1, PF3 [activity: housework]",
+   "facet": "activity: housework",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q18.3": {
+   "node": "PF-N3",
+   "a": "Getting out of the house (errands, shopping, transport)",
+   "to": "leaf",
+   "g": "PF1, PF2 [activity: outing]",
+   "facet": "activity: outing",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q18.4": {
+   "node": "PF-N3",
+   "a": "Exercise or sport",
+   "to": "leaf",
+   "g": "PF3 [activity: exercise]",
+   "facet": "activity: exercise",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q19.1": {
+   "node": "PF-N4",
+   "a": "How much my health limits my work or daily tasks",
+   "to": "leaf",
+   "g": "PF4",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q19.2": {
+   "node": "PF-N4",
+   "a": "How much my emotions limit my work or daily tasks",
+   "to": "leaf",
+   "g": "MO3",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q19.3": {
+   "node": "PF-N4",
+   "a": "How much my health limits my social life",
+   "to": "leaf",
+   "g": "GL4",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q20.1": {
+   "node": "MO-N1",
+   "a": "How good or low my mood is",
+   "to": "leaf",
+   "g": "MO2",
+   "facet": "",
+   "construct": "MOO",
+   "flags": ""
+  },
+  "Q20.2": {
+   "node": "MO-N1",
+   "a": "How anxious or calm I feel",
+   "to": "leaf",
+   "g": "MO1",
+   "facet": "",
+   "construct": "MOO",
+   "flags": ""
+  },
+  "Q20.3": {
+   "node": "MO-N1",
+   "a": "How stressed I feel",
+   "to": "leaf",
+   "g": "MO4",
+   "facet": "",
+   "construct": "MOO",
+   "flags": ""
+  },
+  "Q20.4": {
+   "node": "MO-N1",
+   "a": "How much my emotions limit my work or daily tasks",
+   "to": "leaf",
+   "g": "MO3",
+   "facet": "",
+   "construct": "FUN",
+   "flags": ""
+  },
+  "Q20.5": {
+   "node": "MO-N1",
+   "a": "How I feel emotionally in general",
+   "to": "leaf",
+   "g": "MOO",
+   "facet": "",
+   "construct": "MOO",
+   "flags": "construct level"
+  },
+  "Q21.1": {
+   "node": "BD-N1",
+   "a": "Senses and vision (light, noise, seeing, smell, taste)",
+   "to": "SN-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q21.2": {
+   "node": "BD-N1",
+   "a": "Muscles and movement",
+   "to": "NM-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q21.3": {
+   "node": "BD-N1",
+   "a": "Stomach and bowel",
+   "to": "AU-N3",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q21.4": {
+   "node": "BD-N1",
+   "a": "Bladder",
+   "to": "AU-N4",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q21.5": {
+   "node": "BD-N1",
+   "a": "Temperature, sweating, appetite and weight",
+   "to": "NE-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q21.6": {
+   "node": "BD-N1",
+   "a": "Feeling ill, infections, sensitivities to smells or chemicals",
+   "to": "IM-N1",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q21.7": {
+   "node": "BD-N1",
+   "a": "Something else (e.g. cough, skin, hair loss)",
+   "to": "leaf",
+   "g": "BOD",
+   "facet": "",
+   "construct": "BOD",
+   "flags": "construct level · other"
+  },
+  "Q22.1": {
+   "node": "SN-N1",
+   "a": "How much light, noise or vibration bothers me",
+   "to": "SN-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q22.2": {
+   "node": "SN-N1",
+   "a": "How well I see",
+   "to": "SN-N3",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q22.3": {
+   "node": "SN-N1",
+   "a": "Smell or taste (weaker, lost or changed)",
+   "to": "leaf",
+   "g": "SN6",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q22.4": {
+   "node": "SN-N1",
+   "a": "Pain in or behind my eyes",
+   "to": "leaf",
+   "g": "PN1 [region: eyes]",
+   "facet": "region: eyes",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q23.1": {
+   "node": "SN-N2",
+   "a": "Light",
+   "to": "leaf",
+   "g": "SN1",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q23.2": {
+   "node": "SN-N2",
+   "a": "Noise",
+   "to": "leaf",
+   "g": "SN2",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q23.3": {
+   "node": "SN-N2",
+   "a": "Vibration or shaking (e.g. in a car)",
+   "to": "leaf",
+   "g": "SN3",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q23.4": {
+   "node": "SN-N2",
+   "a": "Reacting to smells, chemicals, foods or mold",
+   "to": "leaf",
+   "g": "IM6",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q24.1": {
+   "node": "SN-N3",
+   "a": "How sharp and clear I see",
+   "to": "leaf",
+   "g": "SN4",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q24.2": {
+   "node": "SN-N3",
+   "a": "Judging distances",
+   "to": "leaf",
+   "g": "SN5",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q25.1": {
+   "node": "NM-N1",
+   "a": "How weak my muscles are",
+   "to": "leaf",
+   "g": "NM1",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q25.2": {
+   "node": "NM-N1",
+   "a": "Muscle twitches",
+   "to": "leaf",
+   "g": "NM2",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q25.3": {
+   "node": "NM-N1",
+   "a": "How clumsy I am",
+   "to": "leaf",
+   "g": "NM3",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q25.4": {
+   "node": "NM-N1",
+   "a": "Feeling unsteady on my feet",
+   "to": "leaf",
+   "g": "NM4",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q25.5": {
+   "node": "NM-N1",
+   "a": "How fast my body tires",
+   "to": "leaf",
+   "g": "EN2",
+   "facet": "",
+   "construct": "FAT",
+   "flags": ""
+  },
+  "Q25.6": {
+   "node": "NM-N1",
+   "a": "Muscle pain",
+   "to": "leaf",
+   "g": "PN1 [region: muscles]",
+   "facet": "region: muscles",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q26.1": {
+   "node": "AU-N3",
+   "a": "Feeling sick (nausea)",
+   "to": "leaf",
+   "g": "AU5",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q26.2": {
+   "node": "AU-N3",
+   "a": "Diarrhoea, constipation, cramps",
+   "to": "leaf",
+   "g": "AU6",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q26.3": {
+   "node": "AU-N3",
+   "a": "Bloating",
+   "to": "leaf",
+   "g": "AU7",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q26.4": {
+   "node": "AU-N3",
+   "a": "Belly pain",
+   "to": "leaf",
+   "g": "PN1 [region: abdomen]",
+   "facet": "region: abdomen",
+   "construct": "PAI",
+   "flags": ""
+  },
+  "Q27.1": {
+   "node": "AU-N4",
+   "a": "Sudden strong urge to go",
+   "to": "leaf",
+   "g": "AU8 [quality: urgency]",
+   "facet": "quality: urgency",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q27.2": {
+   "node": "AU-N4",
+   "a": "Waking up at night to go",
+   "to": "leaf",
+   "g": "AU8 [timing: night]",
+   "facet": "timing: night",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q27.3": {
+   "node": "AU-N4",
+   "a": "Bladder problems in general",
+   "to": "leaf",
+   "g": "AU8",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q28.1": {
+   "node": "NE-N1",
+   "a": "Feeling cold or hot",
+   "to": "NE-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q28.2": {
+   "node": "NE-N1",
+   "a": "Sweating",
+   "to": "NE-N3",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q28.3": {
+   "node": "NE-N1",
+   "a": "Appetite or weight",
+   "to": "NE-N4",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q28.4": {
+   "node": "NE-N1",
+   "a": "Reacting badly to alcohol",
+   "to": "leaf",
+   "g": "NE8",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q29.1": {
+   "node": "NE-N2",
+   "a": "Feeling cold or shivery",
+   "to": "leaf",
+   "g": "NE1",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q29.2": {
+   "node": "NE-N2",
+   "a": "Feeling hot or feverish",
+   "to": "leaf",
+   "g": "NE2",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q29.3": {
+   "node": "NE-N2",
+   "a": "Swinging between hot and cold",
+   "to": "leaf",
+   "g": "NE3",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q29.4": {
+   "node": "NE-N2",
+   "a": "Coping badly with heat or cold",
+   "to": "leaf",
+   "g": "NE4",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q29.5": {
+   "node": "NE-N2",
+   "a": "Fever",
+   "to": "leaf",
+   "g": "IM4",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q30.1": {
+   "node": "NE-N3",
+   "a": "Sweaty hands",
+   "to": "leaf",
+   "g": "NE5 [region: hands]",
+   "facet": "region: hands",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q30.2": {
+   "node": "NE-N3",
+   "a": "Sweating at night",
+   "to": "leaf",
+   "g": "NE5 [timing: night]",
+   "facet": "timing: night",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q30.3": {
+   "node": "NE-N3",
+   "a": "Sweating in general",
+   "to": "leaf",
+   "g": "NE5",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q31.1": {
+   "node": "NE-N4",
+   "a": "Little appetite",
+   "to": "leaf",
+   "g": "NE6",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q31.2": {
+   "node": "NE-N4",
+   "a": "Losing weight",
+   "to": "leaf",
+   "g": "NE7 [pole: loss]",
+   "facet": "pole: loss",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q31.3": {
+   "node": "NE-N4",
+   "a": "Gaining weight",
+   "to": "leaf",
+   "g": "NE7 [pole: gain]",
+   "facet": "pole: gain",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q31.4": {
+   "node": "NE-N4",
+   "a": "My weight itself (e.g. from a scale)",
+   "to": "leaf",
+   "g": "NE7 [measure: device]",
+   "facet": "measure: device",
+   "construct": "BOD",
+   "flags": "measured, not rated"
+  },
+  "Q32.1": {
+   "node": "IM-N1",
+   "a": "Feeling ill (flu-like, throat, glands, fever)",
+   "to": "IM-N2",
+   "g": "",
+   "facet": "",
+   "construct": "",
+   "flags": ""
+  },
+  "Q32.2": {
+   "node": "IM-N1",
+   "a": "How often I get infections",
+   "to": "leaf",
+   "g": "IM5",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q32.3": {
+   "node": "IM-N1",
+   "a": "Reacting to smells, chemicals, foods or mold",
+   "to": "leaf",
+   "g": "IM6",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q33.1": {
+   "node": "IM-N2",
+   "a": "Feeling flu-like",
+   "to": "leaf",
+   "g": "IM3",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q33.2": {
+   "node": "IM-N2",
+   "a": "Sore throat",
+   "to": "leaf",
+   "g": "IM1",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q33.3": {
+   "node": "IM-N2",
+   "a": "Swollen or tender glands",
+   "to": "leaf",
+   "g": "IM2",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  },
+  "Q33.4": {
+   "node": "IM-N2",
+   "a": "Fever",
+   "to": "leaf",
+   "g": "IM4",
+   "facet": "",
+   "construct": "BOD",
+   "flags": ""
+  }
+ },
+ "items": [
+  {
+   "id": "R36-1",
+   "text": "In general, would you say your health is:",
+   "expected": "GL1",
+   "facets": null
+  },
+  {
+   "id": "R36-2",
+   "text": "Compared to one year ago, how would you rate your health in general now?",
+   "expected": "GL3",
+   "facets": "anchor: 1 year ago"
+  },
+  {
+   "id": "R36-3",
+   "text": "Does your health now limit you in these activities? If so, how much? – Vigorous activities: running, lifting heavy objects, participating in strenuous sports",
+   "expected": "PF3",
+   "facets": "activity: exercise; load: vigorous"
+  },
+  {
+   "id": "R36-4",
+   "text": "Does your health now limit you in these activities? If so, how much? – Moderate activities: moving a table, pushing a vacuum cleaner, bowling, playing golf",
+   "expected": "PF3",
+   "facets": "activity: housework; load: moderate"
+  },
+  {
+   "id": "R36-5",
+   "text": "Does your health now limit you in these activities? If so, how much? – Lifting or carrying groceries",
+   "expected": "PF3",
+   "facets": "load: lifting/carrying groceries"
+  },
+  {
+   "id": "R36-6",
+   "text": "Does your health now limit you in these activities? If so, how much? – Climbing several flights of stairs",
+   "expected": "PF2, PF3",
+   "facets": "load: stairs, several flights"
+  },
+  {
+   "id": "R36-7",
+   "text": "Does your health now limit you in these activities? If so, how much? – Climbing one flight of stairs",
+   "expected": "PF2",
+   "facets": "load: stairs, one flight"
+  },
+  {
+   "id": "R36-8",
+   "text": "Does your health now limit you in these activities? If so, how much? – Bending, kneeling, or stooping",
+   "expected": "PF3",
+   "facets": "load: bending, kneeling, stooping"
+  },
+  {
+   "id": "R36-9",
+   "text": "Does your health now limit you in these activities? If so, how much? – Walking more than a mile",
+   "expected": "PF2",
+   "facets": "load: > 1 mile"
+  },
+  {
+   "id": "R36-10",
+   "text": "Does your health now limit you in these activities? If so, how much? – Walking several blocks",
+   "expected": "PF2",
+   "facets": "load: several blocks"
+  },
+  {
+   "id": "R36-11",
+   "text": "Does your health now limit you in these activities? If so, how much? – Walking one block",
+   "expected": "PF2",
+   "facets": "load: one block"
+  },
+  {
+   "id": "R36-12",
+   "text": "Does your health now limit you in these activities? If so, how much? – Bathing or dressing yourself",
+   "expected": "PF1, PF3",
+   "facets": "activity: self-care"
+  },
+  {
+   "id": "R36-13",
+   "text": "Problems with your work or other regular daily activities as a result of your physical health: Cut down on the amount of time you spent on work or other activities",
+   "expected": "PF4",
+   "facets": "measure: time cut down"
+  },
+  {
+   "id": "R36-14",
+   "text": "Problems with your work or other regular daily activities as a result of your physical health: Accomplished less than you would like",
+   "expected": "PF4",
+   "facets": "measure: accomplished less"
+  },
+  {
+   "id": "R36-15",
+   "text": "Problems with your work or other regular daily activities as a result of your physical health: Were limited in the kind of work or other activities",
+   "expected": "PF4",
+   "facets": "measure: kind of activity limited"
+  },
+  {
+   "id": "R36-16",
+   "text": "Problems with your work or other regular daily activities as a result of your physical health: Had difficulty performing the work or other activities (For example, it took extra effort)",
+   "expected": "PF4",
+   "facets": "measure: extra effort needed"
+  },
+  {
+   "id": "R36-17",
+   "text": "Problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious): Cut down the amount of time you spent on work or other activities",
+   "expected": "MO3",
+   "facets": "measure: time cut down"
+  },
+  {
+   "id": "R36-18",
+   "text": "Problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious): Accomplished less than you would like",
+   "expected": "MO3",
+   "facets": "measure: accomplished less"
+  },
+  {
+   "id": "R36-19",
+   "text": "Problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious): Didn’t do work or other activities as carefully as usual",
+   "expected": "MO3",
+   "facets": "measure: less carefully"
+  },
+  {
+   "id": "R36-20",
+   "text": "To what extent has your physical health or emotional problems interfered with your normal social activities with family, neighbors, or groups?",
+   "expected": "GL4",
+   "facets": "measure: extent"
+  },
+  {
+   "id": "R36-21",
+   "text": "How much bodily pain have you had during the past 4 weeks?",
+   "expected": "PN1",
+   "facets": "region: whole body (unspecified)"
+  },
+  {
+   "id": "R36-22",
+   "text": "How much did pain interfere with your normal work (including both work outside the home and housework)?",
+   "expected": "PN2",
+   "facets": null
+  },
+  {
+   "id": "R36-23",
+   "text": "How much of the time during the past 4 weeks – Did you feel full of pep?",
+   "expected": "EN1",
+   "facets": "pole: energy"
+  },
+  {
+   "id": "R36-24",
+   "text": "How much of the time during the past 4 weeks – Have you been a nervous person?",
+   "expected": "MO1",
+   "facets": "pole: anxious"
+  },
+  {
+   "id": "R36-25",
+   "text": "How much of the time during the past 4 weeks – Have you felt so down in the dumps that nothing could cheer you up?",
+   "expected": "MO2",
+   "facets": "pole: low; quality: nothing could cheer up"
+  },
+  {
+   "id": "R36-26",
+   "text": "How much of the time during the past 4 weeks – Have you felt calm and peaceful?",
+   "expected": "MO1",
+   "facets": "pole: calm"
+  },
+  {
+   "id": "R36-27",
+   "text": "How much of the time during the past 4 weeks – Did you have a lot of energy?",
+   "expected": "EN1",
+   "facets": "pole: energy"
+  },
+  {
+   "id": "R36-28",
+   "text": "How much of the time during the past 4 weeks – Have you felt down-hearted and blue?",
+   "expected": "MO2",
+   "facets": "pole: low"
+  },
+  {
+   "id": "R36-29",
+   "text": "How much of the time during the past 4 weeks – Did you feel worn out?",
+   "expected": "EN1",
+   "facets": "pole: fatigue"
+  },
+  {
+   "id": "R36-30",
+   "text": "How much of the time during the past 4 weeks – Have you been a happy person?",
+   "expected": "MO2",
+   "facets": "pole: good"
+  },
+  {
+   "id": "R36-31",
+   "text": "How much of the time during the past 4 weeks – Did you feel tired?",
+   "expected": "EN1",
+   "facets": "pole: fatigue"
+  },
+  {
+   "id": "R36-32",
+   "text": "How much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?",
+   "expected": "GL4",
+   "facets": "measure: time"
+  },
+  {
+   "id": "R36-33",
+   "text": "How TRUE or FALSE is each of following statements for you? – I seem to get sick a little easier than other people",
+   "expected": "IM5, GL1",
+   "facets": "measure: susceptibility vs others"
+  },
+  {
+   "id": "R36-34",
+   "text": "How TRUE or FALSE is each of following statements for you? – I am as healthy as anybody I know",
+   "expected": "GL1",
+   "facets": "measure: vs others"
+  },
+  {
+   "id": "R36-35",
+   "text": "How TRUE or FALSE is each of following statements for you? – I expect my health to get worse",
+   "expected": "GL1",
+   "facets": "measure: expectation (future)"
+  },
+  {
+   "id": "R36-36",
+   "text": "How TRUE or FALSE is each of following statements for you? – My health is excellent",
+   "expected": "GL1",
+   "facets": null
+  }
+ ],
+ "qid": {
+  "N0": "Q01",
+  "GL-N1": "Q02",
+  "EN-N1": "Q03",
+  "EN-N2": "Q04",
+  "CG-N1": "Q05",
+  "CG-N2": "Q06",
+  "CG-N3": "Q07",
+  "CG-N4": "Q08",
+  "CG-N5": "Q09",
+  "SL-N1": "Q10",
+  "SL-N2": "Q11",
+  "SL-N3": "Q12",
+  "PN-N1": "Q13",
+  "PN-N2": "Q14",
+  "AU-N2": "Q15",
+  "PF-N1": "Q16",
+  "PF-N2": "Q17",
+  "PF-N3": "Q18",
+  "PF-N4": "Q19",
+  "MO-N1": "Q20",
+  "BD-N1": "Q21",
+  "SN-N1": "Q22",
+  "SN-N2": "Q23",
+  "SN-N3": "Q24",
+  "NM-N1": "Q25",
+  "AU-N3": "Q26",
+  "AU-N4": "Q27",
+  "NE-N1": "Q28",
+  "NE-N2": "Q29",
+  "NE-N3": "Q30",
+  "NE-N4": "Q31",
+  "IM-N1": "Q32",
+  "IM-N2": "Q33"
+ }
+}

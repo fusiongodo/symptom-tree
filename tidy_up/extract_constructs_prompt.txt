@@ -1,0 +1,68 @@
+# Auftrag: Studien-Repository – welche Outcome-Variablen nutzen Long-COVID- und ME/CFS-Interventionsstudien?
+
+## Kontext (kurz)
+Ich baue eine N-of-1-App für ME/CFS / Long COVID. Nutzer tracken frei benannte Check-in-Scores
+(z. B. „Brain fog“, „Crash“, 0–10). Über einen optionalen Fragebaum wird jeder Score auf ein
+„Granule“ abgebildet (= genau eine Empfindung oder Fähigkeit). Diese Granules sind bereits auf die Items
+von DSQ-1/-2, FUNCAP55/27, RAND-36, Bell-Skala und PGIC gemappt (68 Granules in 12 Sections:
+Schlaf, Kognition, Energie/PEM, Schmerz, Sinne, Funktion, Autonom, Neuromuskulär,
+Temperatur/Appetit/Gewicht, Immun, Stimmung, Global).
+
+Problem: Studien berichten meist grobe Konstrukte („fatigue“, „brain fog“, „sleep quality“, „pain“,
+„daily functioning“), oft mit einfachen Skalen statt validierter Instrumente. Ich will den Fragebaum so
+umbauen, dass seine mittleren Knoten genau diesen häufigen Studien-Konstrukten entsprechen. Granules bleiben
+die feinste Ebene darunter. Dafür brauche ich eine empirische Häufigkeitsverteilung.
+
+## Aufgabe
+1. Erstelle ein Repository von 40–60 Interventionsstudien (2020–2026) zu Long COVID / Post-COVID
+   und ME/CFS: RCTs, offene Studien, Pre-post-Studien, retrospektive Kohorten; Meta-Analysen und
+   Reviews nur als Fundquelle und als eigene Zeile, wenn sie Outcomes poolen.
+2. Startpunkte (bitte aufnehmen):
+   - Intranasale Antihistaminika: https://pmc.ncbi.nlm.nih.gov/articles/PMC11600942/
+   - LDA-Studie: https://www.sciencedirect.com/science/article/pii/S2666354626002127
+   - Low-dose Naltrexon bei Long COVID (gepoolte Pre-post-Analyse; berichtet fatigue, brain fog,
+     sleep quality, pain, daily functioning; Hedges’ g; Quelle selbst finden und verifizieren)
+3. Suche breit: PubMed/PMC, ClinicalTrials.gov (Studien mit Ergebnissen), Referenzlisten von Reviews.
+   Interventionen gemischt: Medikamente, Supplemente, Pacing/Reha, Apherese, HBOT, Vagusstimulation usw.
+4. Extrahiere jedes berichtete Outcome als eigene Zeile (Long-Format).
+
+## Extraktionsschema
+Tab „Studies“ (eine Zeile pro Studie):
+study_id · title · first author · year · DOI/URL · condition (LC / ME-CFS / beide) · design · n ·
+intervention · access (full text / abstract only)
+
+Tab „Outcomes“ (eine Zeile pro Outcome pro Studie):
+study_id · outcome as reported (wörtlich) · construct (normalisiert, siehe unten) · instrument
+(Name oder „ad hoc“) · validated (ja/nein) · scale (z. B. VAS 0–10, Likert 1–5, binär) · timeframe
+(momentan / Tag / Woche / 4 Wochen …) · polarity (higher = worse / better) · primary/secondary ·
+effect reported (ja/nein) · section (eine unserer 12 Sections, siehe Kontext) · note
+
+Tab „Constructs“: Häufigkeit je normalisiertem Konstrukt (Anzahl Studien, nicht Zeilen), getrennt nach
+LC / ME-CFS, mit Anteil „validiertes Instrument“ vs. „ad hoc“. Per Formel aus „Outcomes“ berechnet.
+
+Tab „Instruments“: Häufigkeit je Instrument (z. B. FSS, MFI-20, PROMIS, SF-36, EQ-5D, DSQ, FUNCAP,
+Bell, PSQI, VAS), per Formel.
+
+## Regeln für „construct“
+- Lass die Liste aus den Daten entstehen; normalisiere nur Synonyme (z. B. „cognitive dysfunction“,
+  „brain fog“, „concentration“ → prüfen, ob ein oder mehrere Konstrukte).
+- Halte im Tab „Construct notes“ fest, welche Rohbegriffe du wohin zusammengefasst hast und wo du
+  unsicher warst.
+- Polarität immer erfassen: Fatigue vs. Energie, Depression vs. Wohlbefinden usw.
+
+## Qualität
+- Nichts erfinden. Jede Zeile ist aus der Quelle belegt; bei Volltext hinter einer Paywall nur den
+  Abstract nutzen und „abstract only“ markieren.
+- Wenn du weniger als 40 Studien sauber findest, lieber weniger und dafür korrekt.
+
+## Ergebnis
+1. Eine xlsx-Datei mit den Tabs oben (Formeln, keine fest eingetippten Summen).
+2. Eine kurze Zusammenfassung (max. 1 Seite):
+   - Top-15-Konstrukte nach Häufigkeit,
+   - welche davon meist mit einfachen Skalen gemessen werden,
+   - welche Polaritäten typisch sind,
+   - ein Vorschlag, welche 8–12 Konstrukte die mittlere Ebene eines Fragebaums bilden sollten und wie
+     sie auf unsere 12 Sections passen (Konstrukte, die über mehrere Sections laufen, z. B. „daily
+     functioning“, explizit markieren).
+
+Erst die Suche planen und mir die Suchstrategie in 5 Zeilen zeigen, dann loslegen.

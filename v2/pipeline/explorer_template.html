@@ -1,0 +1,255 @@
+<title>Mapping Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<style>
+/* Layout: Kopfzeile mit Ansichten · links Granule-Register · Mitte Detail · rechts Item-Inspektor (Overlay auf schmal) */
+:root{
+  --bg:#f3f5f7; --panel:#ffffff; --ink:#18212b; --muted:#5d6b78; --line:#d9dfe5; --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --wert:#0f7a6c; --wert-bg:#dcf1ec; --format:#6a5a9c; --format-bg:#ebe7f6; --kontext:#b4530b; --kontext-bg:#fbe8d6;
+  --ok:#2f7a3b; --warn:#b4530b; --hl:#fff4c2;
+  --f-display:"Source Serif 4", Georgia, serif; --f-body:"IBM Plex Sans", system-ui, sans-serif; --f-mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12171d; --panel:#1a2129; --ink:#e3e8ed; --muted:#93a1ae; --line:#2c3640; --accent:#7fb6dc; --accent-soft:#1e3243;
+  --wert:#5cc9b6; --wert-bg:#163a35; --format:#b4a6e4; --format-bg:#2c2742; --kontext:#f0a060; --kontext-bg:#43301f;
+  --ok:#7cc488; --warn:#f0a060; --hl:#4a4320; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171d; --panel:#1a2129; --ink:#e3e8ed; --muted:#93a1ae; --line:#2c3640; --accent:#7fb6dc; --accent-soft:#1e3243;
+  --wert:#5cc9b6; --wert-bg:#163a35; --format:#b4a6e4; --format-bg:#2c2742; --kontext:#f0a060; --kontext-bg:#43301f;
+  --ok:#7cc488; --warn:#f0a060; --hl:#4a4320; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.45}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:1px solid var(--line);
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+h1{font-family:var(--f-display);font-size:19px;margin:0;font-weight:600;letter-spacing:.2px}
+.tabs,.chips{display:flex;gap:6px;flex-wrap:wrap}
+button{font:inherit;color:inherit;cursor:pointer}
+.tab{border:1px solid var(--line);background:transparent;border-radius:6px;padding:5px 11px}
+.tab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+.fchip{border:1px solid var(--line);background:transparent;border-radius:99px;padding:3px 10px;font-size:12.5px}
+.fchip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0;
+  padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
+nav{border-right:1px solid var(--line);height:calc(100vh - 54px);position:sticky;top:54px;overflow:auto;padding:12px 10px 40px}
+nav h3{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 6px 4px;font-weight:600}
+.gl{display:flex;gap:8px;align-items:baseline;width:100%;text-align:left;border:0;background:transparent;padding:4px 6px;border-radius:5px}
+.gl:hover{background:var(--accent-soft)}
+.gl[aria-current="true"]{background:var(--accent-soft);color:var(--accent)}
+.gl .n{margin-left:auto;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.id{font-family:var(--f-mono);font-size:12px;font-weight:500}
+main{min-width:0;overflow-x:clip;padding-block:18px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lead{max-width:72ch}
+h2{font-family:var(--f-display);font-weight:600;font-size:24px;margin:0 0 4px;text-wrap:balance}
+h4{margin:22px 0 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:12px;min-width:0}
+.crumb{font-size:12.5px;color:var(--muted)}
+.crumb b{color:var(--ink);font-weight:600}
+.row{display:grid;grid-template-columns:86px minmax(0,1fr);gap:4px 10px;padding:7px 0;border-top:1px solid var(--line);align-items:start}
+.row:first-of-type{border-top:0}
+.row button.iid{border:0;background:none;padding:0;text-align:left;color:var(--accent)}
+.row button.iid:hover{text-decoration:underline}
+.txt{min-width:0}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.tag{font-size:11.5px;border-radius:4px;padding:1px 6px;border:1px solid transparent;white-space:normal}
+.t-wert{background:var(--wert-bg);color:var(--wert)}
+.t-format{background:var(--format-bg);color:var(--format)}
+.t-kontext{background:var(--kontext-bg);color:var(--kontext)}
+.t-g{border-color:var(--line);color:var(--muted);font-family:var(--f-mono)}
+.t-diff{outline:1.5px solid currentColor;font-weight:600}
+.inst{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+.verdict{display:inline-block;font-size:12px;font-weight:600;border-radius:99px;padding:2px 10px}
+.v-kontext{background:var(--kontext-bg);color:var(--kontext)}
+.v-wert{background:var(--wert-bg);color:var(--wert)}
+.v-format{background:var(--format-bg);color:var(--format)}
+.v-par{background:var(--accent-soft);color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;margin:10px 0 4px}
+.legend span.tag{margin-right:6px}
+.stat{display:flex;gap:22px;flex-wrap:wrap;margin:12px 0}
+.stat div{font-size:12px;color:var(--muted)}
+.stat b{display:block;font-family:var(--f-mono);font-size:22px;color:var(--ink);font-weight:500}
+.dtable{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;vertical-align:top;padding:6px 8px;border-top:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;border-top:0}
+td.code{font-family:var(--f-mono);font-size:12px;white-space:nowrap}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--panel);border-left:1px solid var(--line);
+  z-index:20;overflow-y:auto;overflow-x:hidden;box-shadow:-12px 0 30px rgba(0,0,0,.12);
+  padding-block:calc(env(safe-area-inset-top,0px) + 14px) 40px;padding-left:18px;padding-right:max(18px,env(safe-area-inset-right,0px))}
+aside .x{float:right;border:1px solid var(--line);background:transparent;border-radius:6px;padding:2px 9px}
+aside blockquote{margin:8px 0 0;padding:8px 10px;background:var(--bg);border-radius:6px;font-size:13.5px}
+.kv{display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 10px;font-size:13px;margin-top:10px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.leafline{font-size:13px;padding:4px 0}
+.hl{background:var(--hl)}
+.dhead{font-family:var(--f-display);font-size:17px;font-weight:600;margin-bottom:6px}
+.dhead .id{font-size:15px}
+[data-tip]{position:relative;cursor:help}
+[data-tip]:hover::after,[data-tip]:focus::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% + 4px);z-index:30;
+  width:max-content;max-width:min(320px,80vw);white-space:normal;background:var(--ink);color:var(--panel);
+  font:400 12.5px/1.4 var(--f-body);padding:6px 9px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);text-transform:none;letter-spacing:0}
+.note{font-size:12.5px;color:var(--muted);max-width:72ch}
+@media (max-width:760px){
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  nav{position:static;height:auto;max-height:240px;border-right:0;border-bottom:1px solid var(--line);
+    padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px))}
+  .row{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){aside{animation:slide .18s ease-out}@keyframes slide{from{transform:translateX(24px);opacity:.6}}}
+</style>
+
+<header>
+  <h1>Mapping Explorer</h1>
+  <div class="tabs" role="group" aria-label="Ansicht">
+    <button class="tab" id="tab-k" data-view="k">Schubladen</button>
+    <button class="tab" id="tab-g" data-view="g">Granules</button>
+  </div>
+  <div class="chips" id="instchips" role="group" aria-label="Instrument"></div>
+</header>
+<div class="wrap">
+  <nav id="nav" aria-label="Granule-Register"></nav>
+  <main id="main"></main>
+</div>
+<aside id="insp" hidden></aside>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const INST=['DSQ','RAND-36','FUNCAP','Bell','PGIC'];
+const PRE={'DSQ':'DSQ','RAND-36':'R36','FUNCAP':'F55','Bell':'Bell','PGIC':'PGIC'};
+const FT={load:'wert',measure:'format',pole:'format',anchor:'format',zeitraum:'format',
+  region:'kontext',trigger:'kontext',timing:'kontext',modality:'kontext',activity:'kontext',quality:'kontext',type:'kontext'};
+const FTNAME={wert:'Wert',format:'Format',kontext:'Kontext'};
+const ftype=k=>FT[k]||'kontext';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const G=Object.fromEntries(D.granules.map(g=>[g.id,g]));
+const C=Object.fromEntries(D.constructs.map(c=>[c.id,c]));
+const I=Object.fromEntries(D.items.map(i=>[i.id,i]));
+const leafG=l=>l.g.replace(/\[.*?\]/g,'').split(',').map(s=>s.trim()).filter(Boolean);
+const HOME=D.leaves.filter(l=>!l.same);
+const alt={}; // home key -> alt paths
+D.leaves.filter(l=>l.same).forEach(l=>{(alt[l.same]=alt[l.same]||[]).push(l.path)});
+const homeKey=l=>l.node+' · '+l.a;
+const item2leaves={};
+HOME.forEach(l=>l.items.forEach(i=>{(item2leaves[i]=item2leaves[i]||[]).push(l)}));
+const mapped=D.items.filter(i=>i.status==='mapped');
+// facets incl. Zeitraum als Format-Facette
+const facets=i=>{const f=i.f.map(([k,v])=>[k,v]); if(i.tf&&i.tf!=='—') f.push(['zeitraum',i.tf]); return f};
+// Schubladen pro Instrument: in Python berechnet (pipeline/model.py), hier nur angezeigt
+const LEAF=Object.fromEntries(D.leaves.map(l=>[l.id,l]));
+const drawers=inst=>(D.drawers[inst]||[]).map(d=>({its:d.items.map(id=>I[id]),diff:d.diff,gdiff:d.gdiff,
+  v:d.verdict==='parallel'?'par':d.verdict,leaves:d.leaves.map(id=>LEAF[id])}));
+const gtip=g=>G[g]?`${g} · ${G[g].name}: ${G[g].definition}`:g;
+const gtag=g=>`<span class="tag t-g" data-tip="${esc(gtip(g))}" tabindex="0">${esc(g)}</span>`;
+const VTXT={kontext:'Kontext geht verloren',wert:'harmlos · Wert',format:'harmlos · Format',par:'parallel · identisch'};
+let state={view:'k',inst:'DSQ',g:null};
+
+function tagF(k,v,isDiff){return `<span class="tag t-${ftype(k)}${isDiff?' t-diff':''}" title="${FTNAME[ftype(k)]}-Facette">${esc(k)}: ${esc(v)}</span>`}
+function itemRow(i,diff){
+  const d=new Set(diff||[]);
+  return `<div class="row"><button class="iid id" data-item="${esc(i.id)}">${esc(i.id)}</button><div class="txt">${esc(i.text)}
+    <div class="tags">${i.g.map(gtag).join('')}${facets(i).map(([k,v])=>tagF(k,v,d.has(k))).join('')}</div></div></div>`;
+}
+function legend(){return `<div class="legend">
+  <div><span class="tag t-wert">Wert</span>Position auf der θ-Achse (Last, Distanz). Steckt im Score-Wert.</div>
+  <div><span class="tag t-format">Format</span>Wie gefragt wird (Pol, Messart, Zeitraum).</div>
+  <div><span class="tag t-kontext">Kontext</span>Bedingung, unter der θ auftritt (Trigger, Region, Modalität …).</div></div>
+  <p class="note">Facetten-Typ automatisch nach Schlüssel zugeordnet. Einzelfälle prüfen (z. B. „load: bending“ ist eher Kontext als Wert). Umrandet = unterscheidet die Items dieser Schublade.</p>`}
+
+function navHTML(){
+  const cnt=g=>mapped.filter(i=>INST_ON(i)&&i.g.includes(g)).length;
+  return D.constructs.map(c=>`<h3>${esc(c.name)}</h3>`+c.granules.filter(g=>G[g]).map(g=>
+    `<button class="gl" data-g="${g}" ${state.view==='g'&&state.g===g?'aria-current="true"':''}><span class="id">${g}</span><span>${esc(G[g].wording)}</span><span class="n">${cnt(g)}</span></button>`).join('')).join('');
+}
+const INST_ON=i=>state.view==='g'?(state.instSet.has(i.inst)):i.inst===state.inst;
+state.instSet=new Set(['DSQ','RAND-36','FUNCAP','Bell','PGIC']);
+
+function viewG(){
+  const g=state.g||'PF2', gr=G[g];
+  const leaves=HOME.filter(l=>leafG(l).includes(g));
+  const hit=new Set(); leaves.forEach(l=>l.items.forEach(i=>hit.add(i)));
+  const orphan=mapped.filter(i=>i.g.includes(g)&&!hit.has(i.id)&&state.instSet.has(i.inst));
+  let h=`<div class="lead"><div class="crumb">${esc(C[gr.construct]?.name||'')} · Polarität ${esc(gr.polarity)}</div>
+    <h2><span class="id" style="font-size:20px">${g}</span> ${esc(gr.name)}</h2><p>${esc(gr.definition)}</p></div>
+    <h4>Blätter, die ${g} enthalten (${leaves.length})</h4>`;
+  leaves.forEach(l=>{
+    const its=l.items.map(id=>I[id]).filter(i=>i&&state.instSet.has(i.inst));
+    const alts=alt[homeKey(l)]||[];
+    h+=`<div class="card"><div class="crumb">${l.path.map((p,k)=>k===l.path.length-1?`<b>${esc(p)}</b>`:esc(p)).join(' › ')}</div>
+      <div class="tags"><span class="tag t-g">${esc(l.g)}</span>${l.facet?`<span class="tag t-kontext">gefragt · ${esc(l.facet)}</span>`:'<span class="tag t-g">keine gefragte Facette</span>'}${l.flags?`<span class="tag t-g">${esc(l.flags)}</span>`:''}</div>
+      ${alts.map(p=>`<div class="crumb">auch über: ${p.map(esc).join(' › ')}</div>`).join('')}
+      ${INST.map(inst=>{const x=its.filter(i=>i.inst===inst);return x.length?`<div class="inst">${inst} · ${x.length}</div>`+x.map(i=>itemRow(i)).join(''):''}).join('')||'<p class="muted">Keine Items (Konstrukt-Ebene oder gemessen).</p>'}
+    </div>`});
+  if(orphan.length) h+=`<h4>Items mit ${g}, die kein ${g}-Blatt erreicht (${orphan.length})</h4><div class="card">${orphan.map(i=>itemRow(i)).join('')}
+    <p class="note">Meist Composite-Items, deren Blatt unter einer anderen Granule liegt, oder Items mit einer Facette, die das Blatt ausschließt.</p></div>`;
+  return h;
+}
+function viewK(){
+  const ds=drawers(state.inst), multi=ds.filter(d=>d.its.length>1), R=D.resolution[state.inst];
+  const by=v=>multi.filter(d=>d.v===v).length;
+  let h=`<div class="lead"><h2>Schubladen · ${esc(state.inst)}</h2>
+   <p>Eine Schublade ist die Menge der Items, die von genau denselben Blättern getroffen werden. Der Baum kann Schubladen unterscheiden, aber keine Items innerhalb einer Schublade.</p></div>
+   <div class="stat"><div><b>${R.items}</b>Items</div><div><b>≥ ${R.full}</b>unterscheidbar per Granule + alle Facetten</div><div><b>≥ ${R.drawers}</b>Schubladen (per Baum)</div><div><b>${multi.length}</b>mit &gt; 1 Item</div>
+   <div><b style="color:var(--kontext)">${by('kontext')}</b>Kontext-Verlust</div><div><b style="color:var(--wert)">${by('wert')+by('format')}</b>harmlos (Wert/Format)</div><div><b style="color:var(--accent)">${by('par')}</b>parallel</div></div>
+   ${legend()}<h4>Schubladen mit mehreren Items</h4>`;
+  multi.forEach(d=>{
+    const lg=[...new Set(d.leaves.flatMap(l=>l.gl))];
+    h+=`<div class="card"><div class="dhead">${lg.map(g=>`<span class="id" data-tip="${esc(gtip(g))}" tabindex="0">${g}</span> ${esc(G[g]?.name||'')}`).join(' · ')||'<span class="muted">kein Blatt</span>'}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span class="verdict v-${d.v}">${VTXT[d.v]}</span>
+      ${d.gdiff?'<span class="tag t-g">Granules verschieden</span>':''}<span class="muted">${d.its.length} Items</span></div>
+      ${d.leaves.map(l=>`<div class="crumb" style="margin-top:6px">${l.path.map((p,k)=>k===l.path.length-1?`<b>${esc(p)}</b>`:esc(p)).join(' › ')}${l.facet?` · <span class="tag t-kontext">gefragt · ${esc(l.facet)}</span>`:''}</div>`).join('')||'<div class="crumb">von keinem Blatt erreicht</div>'}
+      ${d.its.map(i=>itemRow(i,d.diff)).join('')}</div>`});
+  const single=ds.filter(d=>d.its.length===1);
+  h+=`<h4>Einzel-Schubladen (${single.length})</h4><p class="note">Diese Items sind durch den Baum eindeutig getroffen.</p>
+    <div class="card">${single.map(d=>itemRow(d.its[0])).join('')}</div>`;
+  return h;
+}
+function inspector(id){
+  const i=I[id]; if(!i) return;
+  const ls=item2leaves[id]||[];
+  const d=drawers(i.inst).find(x=>x.its.some(y=>y.id===id));
+  const el=document.getElementById('insp');
+  el.innerHTML=`<button class="x" id="closeinsp" aria-label="Schließen">✕</button>
+   <div class="crumb">${esc(i.inst)} · ${esc(i.status)}</div><h2 class="id" style="font-size:20px">${esc(i.id)}</h2>
+   <blockquote>${esc(i.text)}</blockquote>
+   <dl class="kv"><dt>Antwortformat</dt><dd>${esc(i.resp||'—')}</dd><dt>Zeitraum</dt><dd>${esc(i.tf||'—')}</dd>
+   <dt>Messtyp</dt><dd>${esc(i.mt||'—')}</dd><dt>Granules M(i)</dt><dd>${i.g.map(g=>`<button class="fchip" data-g="${g}" title="${esc(gtip(g))}">${g} ${esc(G[g]?.wording||'')}</button>`).join(' ')||'—'}</dd>
+   <dt>Facetten c</dt><dd class="tags">${facets(i).map(([k,v])=>tagF(k,v,d&&d.diff.includes(k))).join('')||'—'}</dd></dl>
+   <h4>Blätter, die dieses Item treffen</h4>${ls.map(l=>`<div class="leafline">${l.path.map(esc).join(' › ')}</div>`).join('')||'<p class="muted">keins</p>'}
+   ${d&&d.its.length>1?`<h4>Schublade: ${d.its.length} Items · <span class="verdict v-${d.v}">${VTXT[d.v]}</span></h4>
+     ${d.its.map(x=>`<div class="${x.id===id?'hl':''}">${itemRow(x,d.diff)}</div>`).join('')}`:'<h4>Schublade</h4><p>Allein in seiner Schublade: der Baum trifft dieses Item eindeutig.</p>'}`;
+  el.hidden=false;
+  document.getElementById('closeinsp').onclick=()=>{el.hidden=true};
+}
+function render(){
+  document.getElementById('tab-k').setAttribute('aria-pressed',state.view==='k');
+  document.getElementById('tab-g').setAttribute('aria-pressed',state.view==='g');
+  document.getElementById('instchips').innerHTML=(state.view==='k'?['DSQ','RAND-36','FUNCAP']:INST).map(x=>
+    `<button class="fchip" data-inst="${x}" aria-pressed="${state.view==='k'?x===state.inst:state.instSet.has(x)}">${x}</button>`).join('');
+  document.getElementById('nav').innerHTML=navHTML();
+  document.getElementById('main').innerHTML=state.view==='g'?viewG():viewK();
+}
+function go(hash){
+  const h=(hash||'').replace(/^#/,'');
+  if(h.startsWith('g-')&&G[h.slice(2)]){state.view='g';state.g=h.slice(2)}
+  else if(h.startsWith('k-')){state.view='k';state.inst={DSQ:'DSQ',R36:'RAND-36',F55:'FUNCAP'}[h.slice(2)]||'DSQ'}
+  render();
+  if(h.startsWith('i-')&&I[h.slice(2)]) inspector(h.slice(2));
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if(t.dataset.view){ if(t.dataset.view==='g'){location.hash='g-'+(state.g||'PF2')} else {location.hash='k-'+PRE[state.inst].replace('DSQ','DSQ')} }
+  else if(t.dataset.g){document.getElementById('insp').hidden=true; location.hash='g-'+t.dataset.g; window.scrollTo(0,0)}
+  else if(t.dataset.item){inspector(t.dataset.item)}
+  else if(t.dataset.inst){const x=t.dataset.inst;
+    if(state.view==='k'){location.hash='k-'+PRE[x]}
+    else{state.instSet.has(x)?state.instSet.delete(x):state.instSet.add(x);render()}}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('insp').hidden=true});
+window.addEventListener('hashchange',()=>go(location.hash));
+go(location.hash);
+</script>

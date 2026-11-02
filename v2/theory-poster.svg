@@ -1,0 +1,444 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 3686" width="1680" height="3686">
+<style>@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap");</style>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b6876"/></marker></defs>
+<rect x="0.0" y="0.0" width="1680.0" height="3800.0" rx="0" fill="#eef1f4" stroke="#eef1f4" stroke-width="1" />
+<text x="60.0" y="92.0" font-size="58" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Vom Score zum Item</text>
+<text x="60.0" y="132.0" font-size="20" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Ein Messmodell für den ME/CFS-Symptombaum: Fragen, Variablen, Facetten, Blätter und Schubladen</text>
+<text x="60.0" y="176.0" font-size="14" fill="#5b6876" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Status jeder Aussage:</text>
+<rect x="220.0" y="159.0" width="59.0" height="25.0" rx="5" fill="#e1edf6" stroke="#e1edf6" stroke-width="1" />
+<text x="229.0" y="176.0" font-size="14" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Regel</text>
+<text x="287.0" y="176.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >steht im xlsx</text>
+<rect x="409.2" y="159.0" width="91.8" height="25.0" rx="5" fill="#e1edf6" stroke="#e1edf6" stroke-width="1" />
+<text x="418.2" y="176.0" font-size="14" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Hypothese</text>
+<text x="509.0" y="176.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >aus Itemtexten abgeleitet</text>
+<rect x="720.0" y="159.0" width="59.0" height="25.0" rx="5" fill="#e1edf6" stroke="#e1edf6" stroke-width="1" />
+<text x="729.0" y="176.0" font-size="14" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Linse</text>
+<text x="787.0" y="176.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Theorie, passt, unbelegt</text>
+<rect x="990.6" y="159.0" width="75.4" height="25.0" rx="5" fill="#e1edf6" stroke="#e1edf6" stroke-width="1" />
+<text x="999.6" y="176.0" font-size="14" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Evidenz</text>
+<text x="1074.0" y="176.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Testergebnis</text>
+<rect x="60.0" y="220.0" width="1560.0" height="560.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="86.0" y="264.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >01</text>
+<text x="122.0" y="264.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Das Modell: eine Variable, viele Messungen</text>
+<text x="86.0" y="292.0" font-size="14.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Eine Frage ist eine Messung einer Variable unter einer Bedingung. Frage und Variable stehen in einer n:m-Beziehung.</text>
+<circle cx="440.0" cy="410.0" r="58" fill="#f6edf3" stroke="#8a3f6f" stroke-width="2.2" stroke-dasharray="6 5"/>
+<text x="440.0" y="406.0" font-size="34" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >θ</text>
+<text x="440.0" y="432.0" font-size="13" fill="#8a3f6f" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >PF2</text>
+<text x="362.0" y="390.0" font-size="14" fill="#8a3f6f" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="end" >latente Variable (Granule)</text>
+<text x="362.0" y="409.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="end" >„Wie weit kann ich gehen?“</text>
+<text x="362.0" y="428.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="end" >nicht direkt beobachtbar</text>
+<line x1="401.0" y1="468.0" x2="182.5" y2="556.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<text x="297.2" y="514.0" font-size="14" fill="#5b6876" font-weight="500" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >λ</text>
+<rect x="100.0" y="560.0" width="165.0" height="74.0" rx="6" fill="#fff" stroke="#1b2430" stroke-width="1.4" />
+<text x="110.0" y="582.0" font-size="13.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x  R36-11</text>
+<text x="110.0" y="602.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Walking one block</text>
+<rect x="110.0" y="611.5" width="78.2" height="20.5" rx="4" fill="#d9f0ea" stroke="#d9f0ea" stroke-width="1" />
+<text x="117.0" y="626.0" font-size="11.5" fill="#0f7a6c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >one block</text>
+<circle cx="182.5" cy="680.0" r="14" fill="#fff" stroke="#5b6876" stroke-width="1.2" />
+<text x="182.5" y="685.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >ε</text>
+<line x1="182.5" y1="666.0" x2="182.5" y2="637.0" stroke="#5b6876" stroke-width="1.2" marker-end="url(#ar)" />
+<line x1="427.0" y1="468.0" x2="369.5" y2="556.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<text x="390.8" y="514.0" font-size="14" fill="#5b6876" font-weight="500" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >λ</text>
+<rect x="287.0" y="560.0" width="165.0" height="74.0" rx="6" fill="#fff" stroke="#1b2430" stroke-width="1.4" />
+<text x="297.0" y="582.0" font-size="13.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x  R36-9</text>
+<text x="297.0" y="602.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Walking &gt; 1 mile</text>
+<rect x="297.0" y="611.5" width="71.0" height="20.5" rx="4" fill="#d9f0ea" stroke="#d9f0ea" stroke-width="1" />
+<text x="304.0" y="626.0" font-size="11.5" fill="#0f7a6c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >&gt; 1 mile</text>
+<circle cx="369.5" cy="680.0" r="14" fill="#fff" stroke="#5b6876" stroke-width="1.2" />
+<text x="369.5" y="685.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >ε</text>
+<line x1="369.5" y1="666.0" x2="369.5" y2="637.0" stroke="#5b6876" stroke-width="1.2" marker-end="url(#ar)" />
+<line x1="453.0" y1="468.0" x2="556.5" y2="556.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<text x="506.2" y="514.0" font-size="14" fill="#5b6876" font-weight="500" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >λ</text>
+<rect x="474.0" y="560.0" width="165.0" height="74.0" rx="6" fill="#fff" stroke="#1b2430" stroke-width="1.4" />
+<text x="484.0" y="582.0" font-size="13.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x  F55-9</text>
+<text x="484.0" y="602.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Walking ≈ 100 m</text>
+<rect x="484.0" y="611.5" width="49.6" height="20.5" rx="4" fill="#d9f0ea" stroke="#d9f0ea" stroke-width="1" />
+<text x="491.0" y="626.0" font-size="11.5" fill="#0f7a6c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >100 m</text>
+<circle cx="556.5" cy="680.0" r="14" fill="#fff" stroke="#5b6876" stroke-width="1.2" />
+<text x="556.5" y="685.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >ε</text>
+<line x1="556.5" y1="666.0" x2="556.5" y2="637.0" stroke="#5b6876" stroke-width="1.2" marker-end="url(#ar)" />
+<line x1="479.0" y1="468.0" x2="743.5" y2="556.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<text x="599.8" y="514.0" font-size="14" fill="#5b6876" font-weight="500" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >λ</text>
+<rect x="661.0" y="560.0" width="165.0" height="74.0" rx="6" fill="#fff" stroke="#1b2430" stroke-width="1.4" />
+<text x="671.0" y="582.0" font-size="13.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x  F55-11</text>
+<text x="671.0" y="602.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Walking ≈ 1 km</text>
+<rect x="671.0" y="611.5" width="85.3" height="20.5" rx="4" fill="#d9f0ea" stroke="#d9f0ea" stroke-width="1" />
+<text x="678.0" y="626.0" font-size="11.5" fill="#0f7a6c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >1 km level</text>
+<circle cx="743.5" cy="680.0" r="14" fill="#fff" stroke="#5b6876" stroke-width="1.2" />
+<text x="743.5" y="685.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >ε</text>
+<line x1="743.5" y1="666.0" x2="743.5" y2="637.0" stroke="#5b6876" stroke-width="1.2" marker-end="url(#ar)" />
+<text x="100.0" y="745.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Items: dieselbe Variable unter verschiedenen Bedingungen c_i (hier: Gehstrecke = Last).</text>
+<line x1="498.0" y1="402.0" x2="780.0" y2="400.0" stroke="#1f5f8b" stroke-width="1.8" marker-end="url(#ar)" />
+<rect x="780.0" y="392.0" width="220.0" height="78.0" rx="8" fill="#e1edf6" stroke="#1f5f8b" stroke-width="1.5" />
+<text x="792.0" y="416.0" font-size="14" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >s  User-Score</text>
+<text x="792.0" y="437.0" font-size="13.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >„Gehstrecke heute (m)“</text>
+<text x="792.0" y="457.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >kennt nur π_A(c)</text>
+<text x="1070.0" y="340.0" font-size="17" fill="#1b2430" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Die fünf Objekte</text>
+<text x="1070.0" y="374.0" font-size="15" fill="#8a3f6f" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >θ_g</text>
+<text x="1122.0" y="374.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Variable (Granule g): was wir wissen wollen</text>
+<text x="1070.0" y="401.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >c</text>
+<text x="1122.0" y="401.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Bedingung: Facetten, Schlüssel → Wert</text>
+<text x="1070.0" y="428.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >i</text>
+<text x="1122.0" y="428.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Item: trägt Granules M(i) und volle Facetten c_i</text>
+<text x="1070.0" y="455.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >S</text>
+<text x="1122.0" y="455.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Skala: Aggregat über Items, das berichten Studien</text>
+<text x="1070.0" y="482.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >s</text>
+<text x="1122.0" y="482.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >User-Score: direkte Selbsteinschätzung über den Baum</text>
+<rect x="1058.0" y="527.0" width="552.0" height="150.0" rx="8" fill="#eef1f4" stroke="#eef1f4" stroke-width="1" />
+<text x="1070.0" y="563.0" font-size="18" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x_i = f_i(θ, c_i) + ε_i</text>
+<text x="1370.0" y="563.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Antwort auf Item i</text>
+<text x="1070.0" y="607.0" font-size="18" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >S   = (1/k) · Σ x_i</text>
+<text x="1370.0" y="607.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Skala = Mittelwert</text>
+<text x="1070.0" y="651.0" font-size="18" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >s   = h(θ, π_A(c)) + ε</text>
+<text x="1370.0" y="651.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Score, nur gefragte Facetten</text>
+<rect x="60.0" y="810.0" width="1560.0" height="760.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="86.0" y="854.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >02</text>
+<text x="122.0" y="854.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Sechs Item-Typen</text>
+<text x="86.0" y="882.0" font-size="14.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Die Typen unterscheiden sich in der Form von f. Mehrere Items pro Variable gibt es aus zwei Gründen: mitteln (1) oder abtasten (2).</text>
+<rect x="86.0" y="910.0" width="496.0" height="300.0" rx="10" fill="#fbfcfd" stroke="#cfd6de" stroke-width="1" />
+<text x="104.0" y="942.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >1</text>
+<text x="126.0" y="942.0" font-size="19" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Parallel: mitteln</text>
+<text x="104.0" y="1128.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x_i = λ_i·θ + ε_i</text>
+<text x="104.0" y="1154.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >RAND-36 23 pep · 27 energy · 29 worn out · 31 tired → alle EN1</text>
+<text x="104.0" y="1196.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Var(Mittel) = σ²/k: genauer, nicht enger</text>
+<circle cx="334.0" cy="984.0" r="20" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="334.0" y="990.0" font-size="17" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >θ</text>
+<line x1="334.0" y1="1004.0" x2="196.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="167.0" y="1052.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="196.0" y="1072.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >23</text>
+<line x1="334.0" y1="1004.0" x2="288.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="259.0" y="1052.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="288.0" y="1072.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >27</text>
+<line x1="334.0" y1="1004.0" x2="380.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="351.0" y="1052.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="380.0" y="1072.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >29</text>
+<line x1="334.0" y1="1004.0" x2="472.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="443.0" y="1052.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="472.0" y="1072.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >31</text>
+<rect x="600.0" y="910.0" width="496.0" height="300.0" rx="10" fill="#fbfcfd" stroke="#cfd6de" stroke-width="1" />
+<text x="618.0" y="942.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >2</text>
+<text x="640.0" y="942.0" font-size="19" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Gestuft: abtasten</text>
+<text x="618.0" y="1128.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x_i = 1 wenn θ &gt; b_i</text>
+<text x="618.0" y="1154.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >RAND-36 11 ein Block · 10 mehrere Blocks · 9 eine Meile → alle PF2</text>
+<text x="618.0" y="1196.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Antwort (ja, ja, nein) → θ ∈ [b₁₀, b₉)</text>
+<line x1="630.0" y1="1038.0" x2="1066.0" y2="1038.0" stroke="#1b2430" stroke-width="1.4" marker-end="url(#ar)" />
+<text x="1062.0" y="1062.0" font-size="16" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="end" >θ</text>
+<line x1="725.9" y1="1012.0" x2="725.9" y2="1046.0" stroke="#1b2430" stroke-width="2" />
+<text x="725.9" y="1066.0" font-size="14" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >b₁₁</text>
+<text x="725.9" y="1004.0" font-size="13" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >ja</text>
+<line x1="834.9" y1="1012.0" x2="834.9" y2="1046.0" stroke="#1b2430" stroke-width="2" />
+<text x="834.9" y="1066.0" font-size="14" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >b₁₀</text>
+<text x="834.9" y="1004.0" font-size="13" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >ja</text>
+<line x1="961.4" y1="1012.0" x2="961.4" y2="1046.0" stroke="#1b2430" stroke-width="2" />
+<text x="961.4" y="1066.0" font-size="14" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >b₉</text>
+<text x="961.4" y="1004.0" font-size="13" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >nein</text>
+<rect x="834.9" y="1030" width="126.4" height="8" fill="#8a3f6f" opacity=".35"/>
+<text x="630.0" y="1088.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Last-Facette = Position b_i auf der Achse</text>
+<rect x="1114.0" y="910.0" width="496.0" height="300.0" rx="10" fill="#fbfcfd" stroke="#cfd6de" stroke-width="1" />
+<text x="1132.0" y="942.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >3</text>
+<text x="1154.0" y="942.0" font-size="19" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Composite: mehrere Variablen</text>
+<text x="1132.0" y="1128.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >Σ λ_g·θ_g   oder   min_g θ_g</text>
+<text x="1132.0" y="1154.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >FUNCAP 32 „Dinner party“ → CG2, CG4, CG7, SN2 (+ CG6?)</text>
+<text x="1132.0" y="1196.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >nicht identifizierbar: x ↛ einzelnes θ</text>
+<circle cx="1224.0" cy="984.0" r="22" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="1224.0" y="990.0" font-size="13" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >CG2</text>
+<line x1="1224.0" y1="1006.0" x2="1362.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<circle cx="1316.0" cy="984.0" r="22" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="1316.0" y="990.0" font-size="13" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >CG4</text>
+<line x1="1316.0" y1="1006.0" x2="1362.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<circle cx="1408.0" cy="984.0" r="22" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="1408.0" y="990.0" font-size="13" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >CG7</text>
+<line x1="1408.0" y1="1006.0" x2="1362.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<circle cx="1500.0" cy="984.0" r="22" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="1500.0" y="990.0" font-size="13" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >SN2</text>
+<line x1="1500.0" y1="1006.0" x2="1362.0" y2="1050.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="1327.0" y="1052.0" width="70.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="1362.0" y="1072.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >F55-32</text>
+<rect x="86.0" y="1234.0" width="496.0" height="300.0" rx="10" fill="#fbfcfd" stroke="#cfd6de" stroke-width="1" />
+<text x="104.0" y="1266.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >4</text>
+<text x="126.0" y="1266.0" font-size="19" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Global</text>
+<text x="104.0" y="1452.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >θ_GL ≈ g(θ_1, …, θ_n)</text>
+<text x="104.0" y="1478.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >RAND-36 1 „In general, your health is …“ → GL1</text>
+<text x="104.0" y="1520.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Gesamturteil über viele Variablen</text>
+<circle cx="176.0" cy="1294.0" r="11" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.2" stroke-dasharray="6 5"/>
+<line x1="176.0" y1="1305.0" x2="334.0" y2="1326.0" stroke="#5b6876" stroke-width="1" marker-end="url(#ar)" />
+<circle cx="256.0" cy="1294.0" r="11" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.2" stroke-dasharray="6 5"/>
+<line x1="256.0" y1="1305.0" x2="334.0" y2="1326.0" stroke="#5b6876" stroke-width="1" marker-end="url(#ar)" />
+<circle cx="336.0" cy="1294.0" r="11" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.2" stroke-dasharray="6 5"/>
+<line x1="336.0" y1="1305.0" x2="334.0" y2="1326.0" stroke="#5b6876" stroke-width="1" marker-end="url(#ar)" />
+<circle cx="416.0" cy="1294.0" r="11" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.2" stroke-dasharray="6 5"/>
+<line x1="416.0" y1="1305.0" x2="334.0" y2="1326.0" stroke="#5b6876" stroke-width="1" marker-end="url(#ar)" />
+<circle cx="496.0" cy="1294.0" r="11" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.2" stroke-dasharray="6 5"/>
+<line x1="496.0" y1="1305.0" x2="334.0" y2="1326.0" stroke="#5b6876" stroke-width="1" marker-end="url(#ar)" />
+<circle cx="334.0" cy="1346.0" r="20" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="334.0" y="1352.0" font-size="17" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >GL</text>
+<line x1="334.0" y1="1366.0" x2="334.0" y2="1380.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="305.0" y="1382.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="334.0" y="1402.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >R36-1</text>
+<rect x="600.0" y="1234.0" width="496.0" height="300.0" rx="10" fill="#fbfcfd" stroke="#cfd6de" stroke-width="1" />
+<text x="618.0" y="1266.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >5</text>
+<text x="640.0" y="1266.0" font-size="19" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Änderung</text>
+<text x="618.0" y="1452.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x = f(θ_jetzt − θ_Anker)</text>
+<text x="618.0" y="1478.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >RAND-36 2 „Compared to one year ago …“, PGIC → nicht im</text>
+<text x="618.0" y="1496.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Check-in-Baum</text>
+<text x="618.0" y="1520.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >periodische Fragebögen</text>
+<circle cx="750.0" cy="1330.0" r="20" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="750.0" y="1336.0" font-size="17" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >θ₀</text>
+<circle cx="946.0" cy="1330.0" r="20" fill="#f6edf3" stroke="#8a3f6f" stroke-width="1.8" stroke-dasharray="6 5"/>
+<text x="946.0" y="1336.0" font-size="13" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >θ_t</text>
+<line x1="772.0" y1="1330.0" x2="922.0" y2="1330.0" stroke="#8a3f6f" stroke-width="1.6" marker-end="url(#ar)" />
+<text x="848.0" y="1320.0" font-size="17" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="middle" >Δθ</text>
+<line x1="848.0" y1="1336.0" x2="848.0" y2="1374.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="819.0" y="1376.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="848.0" y="1396.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >R36-2</text>
+<rect x="1114.0" y="1234.0" width="496.0" height="300.0" rx="10" fill="#fbfcfd" stroke="#cfd6de" stroke-width="1" />
+<text x="1132.0" y="1266.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >6</text>
+<text x="1154.0" y="1266.0" font-size="19" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Gemessen statt bewertet</text>
+<text x="1132.0" y="1452.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >x = θ_phys + ε_Gerät</text>
+<text x="1132.0" y="1478.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Puls aus der Uhr (AU3), Gewicht von der Waage (NE7)</text>
+<text x="1132.0" y="1520.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >eigene Einheit, nie mit Ratings gepoolt</text>
+<rect x="1310.0" y="1296.0" width="104.0" height="62.0" rx="14" fill="#fff" stroke="#5b6876" stroke-width="1.4" />
+<text x="1362.0" y="1334.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >♥ 72 bpm</text>
+<line x1="1362.0" y1="1360.0" x2="1362.0" y2="1374.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="1333.0" y="1376.0" width="58.0" height="30.0" rx="4" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="1362.0" y="1396.0" font-size="12" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >Wert</text>
+<rect x="60.0" y="1600.0" width="765.0" height="560.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="86.0" y="1644.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >03</text>
+<text x="122.0" y="1644.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Gestufte Items als Wahrscheinlichkeit</text>
+<text x="86.0" y="1672.0" font-size="14.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Antworten sind verrauscht: Wer an der Schwelle liegt, sagt mal ja, mal nein.</text>
+<line x1="140.0" y1="1970.0" x2="765.0" y2="1970.0" stroke="#1b2430" stroke-width="1.3" />
+<line x1="140.0" y1="1720.0" x2="140.0" y2="1970.0" stroke="#1b2430" stroke-width="1.3" />
+<line x1="135.0" y1="1970.0" x2="140.0" y2="1970.0" stroke="#1b2430" stroke-width="1" />
+<text x="130.0" y="1975.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="end" >0</text>
+<line x1="135.0" y1="1845.0" x2="140.0" y2="1845.0" stroke="#1b2430" stroke-width="1" />
+<text x="130.0" y="1850.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="end" >0,5</text>
+<line x1="140.0" y1="1845.0" x2="765.0" y2="1845.0" stroke="#cfd6de" stroke-width="1" stroke-dasharray="3 4"/>
+<line x1="135.0" y1="1720.0" x2="140.0" y2="1720.0" stroke="#1b2430" stroke-width="1" />
+<text x="130.0" y="1725.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="end" >1</text>
+<text x="130.0" y="1706.0" font-size="13.5" fill="#5b6876" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >P(x_i = 1)</text>
+<text x="765.0" y="2000.0" font-size="17" fill="#8a3f6f" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="end" >θ</text>
+<polyline points="140.0,1966.2 145.2,1965.7 150.4,1965.3 155.6,1964.7 160.8,1964.2 166.0,1963.5 171.2,1962.8 176.5,1962.0 181.7,1961.2 186.9,1960.2 192.1,1959.2 197.3,1958.0 202.5,1956.7 207.7,1955.3 212.9,1953.8 218.1,1952.1 223.3,1950.2 228.5,1948.2 233.8,1945.9 239.0,1943.5 244.2,1940.9 249.4,1938.0 254.6,1934.9 259.8,1931.6 265.0,1928.0 270.2,1924.1 275.4,1920.0 280.6,1915.6 285.8,1910.9 291.0,1906.0 296.2,1900.8 301.5,1895.3 306.7,1889.6 311.9,1883.7 317.1,1877.6 322.3,1871.3 327.5,1864.8 332.7,1858.3 337.9,1851.7 343.1,1845.0 348.3,1838.3 353.5,1831.7 358.8,1825.2 364.0,1818.7 369.2,1812.4 374.4,1806.3 379.6,1800.4 384.8,1794.7 390.0,1789.2 395.2,1784.0 400.4,1779.1 405.6,1774.4 410.8,1770.0 416.0,1765.9 421.2,1762.0 426.5,1758.4 431.7,1755.1 436.9,1752.0 442.1,1749.1 447.3,1746.5 452.5,1744.1 457.7,1741.8 462.9,1739.8 468.1,1737.9 473.3,1736.2 478.5,1734.7 483.8,1733.3 489.0,1732.0 494.2,1730.8 499.4,1729.8 504.6,1728.8 509.8,1728.0 515.0,1727.2 520.2,1726.5 525.4,1725.8 530.6,1725.3 535.8,1724.7 541.0,1724.3 546.2,1723.8 551.5,1723.5 556.7,1723.1 561.9,1722.8 567.1,1722.5 572.3,1722.3 577.5,1722.0 582.7,1721.8 587.9,1721.7 593.1,1721.5 598.3,1721.3 603.5,1721.2 608.8,1721.1 614.0,1721.0 619.2,1720.9 624.4,1720.8 629.6,1720.7 634.8,1720.6 640.0,1720.6 645.2,1720.5 650.4,1720.5 655.6,1720.4 660.8,1720.4 666.0,1720.3 671.2,1720.3 676.5,1720.3 681.7,1720.2 686.9,1720.2 692.1,1720.2 697.3,1720.2 702.5,1720.2 707.7,1720.1 712.9,1720.1 718.1,1720.1 723.3,1720.1 728.5,1720.1 733.8,1720.1 739.0,1720.1 744.2,1720.1 749.4,1720.1 754.6,1720.1 759.8,1720.0 765.0,1720.0" fill="none" stroke="#0f7a6c" stroke-width="2.4" />
+<polyline points="140.0,1969.9 145.2,1969.9 150.4,1969.9 155.6,1969.9 160.8,1969.9 166.0,1969.9 171.2,1969.9 176.5,1969.9 181.7,1969.9 186.9,1969.8 192.1,1969.8 197.3,1969.8 202.5,1969.8 207.7,1969.8 212.9,1969.7 218.1,1969.7 223.3,1969.7 228.5,1969.6 233.8,1969.6 239.0,1969.5 244.2,1969.5 249.4,1969.4 254.6,1969.4 259.8,1969.3 265.0,1969.2 270.2,1969.1 275.4,1969.0 280.6,1968.9 285.8,1968.8 291.0,1968.7 296.2,1968.5 301.5,1968.3 306.7,1968.2 311.9,1968.0 317.1,1967.7 322.3,1967.5 327.5,1967.2 332.7,1966.9 337.9,1966.5 343.1,1966.2 348.3,1965.7 353.5,1965.3 358.8,1964.7 364.0,1964.2 369.2,1963.5 374.4,1962.8 379.6,1962.0 384.8,1961.2 390.0,1960.2 395.2,1959.2 400.4,1958.0 405.6,1956.7 410.8,1955.3 416.0,1953.8 421.2,1952.1 426.5,1950.2 431.7,1948.2 436.9,1945.9 442.1,1943.5 447.3,1940.9 452.5,1938.0 457.7,1934.9 462.9,1931.6 468.1,1928.0 473.3,1924.1 478.5,1920.0 483.8,1915.6 489.0,1910.9 494.2,1906.0 499.4,1900.8 504.6,1895.3 509.8,1889.6 515.0,1883.7 520.2,1877.6 525.4,1871.3 530.6,1864.8 535.8,1858.3 541.0,1851.7 546.2,1845.0 551.5,1838.3 556.7,1831.7 561.9,1825.2 567.1,1818.7 572.3,1812.4 577.5,1806.3 582.7,1800.4 587.9,1794.7 593.1,1789.2 598.3,1784.0 603.5,1779.1 608.8,1774.4 614.0,1770.0 619.2,1765.9 624.4,1762.0 629.6,1758.4 634.8,1755.1 640.0,1752.0 645.2,1749.1 650.4,1746.5 655.6,1744.1 660.8,1741.8 666.0,1739.8 671.2,1737.9 676.5,1736.2 681.7,1734.7 686.9,1733.3 692.1,1732.0 697.3,1730.8 702.5,1729.8 707.7,1728.8 712.9,1728.0 718.1,1727.2 723.3,1726.5 728.5,1725.8 733.8,1725.3 739.0,1724.7 744.2,1724.3 749.4,1723.8 754.6,1723.5 759.8,1723.1 765.0,1722.8" fill="none" stroke="#1f5f8b" stroke-width="2.4" />
+<polyline points="140.0,1970.0 145.2,1970.0 150.4,1970.0 155.6,1970.0 160.8,1970.0 166.0,1970.0 171.2,1970.0 176.5,1970.0 181.7,1970.0 186.9,1970.0 192.1,1970.0 197.3,1970.0 202.5,1970.0 207.7,1970.0 212.9,1970.0 218.1,1970.0 223.3,1970.0 228.5,1970.0 233.8,1970.0 239.0,1970.0 244.2,1970.0 249.4,1970.0 254.6,1970.0 259.8,1970.0 265.0,1970.0 270.2,1970.0 275.4,1970.0 280.6,1970.0 285.8,1970.0 291.0,1970.0 296.2,1970.0 301.5,1970.0 306.7,1970.0 311.9,1970.0 317.1,1970.0 322.3,1970.0 327.5,1970.0 332.7,1970.0 337.9,1970.0 343.1,1970.0 348.3,1970.0 353.5,1970.0 358.8,1970.0 364.0,1970.0 369.2,1970.0 374.4,1970.0 379.6,1970.0 384.8,1970.0 390.0,1970.0 395.2,1970.0 400.4,1970.0 405.6,1970.0 410.8,1970.0 416.0,1970.0 421.2,1970.0 426.5,1970.0 431.7,1970.0 436.9,1969.9 442.1,1969.9 447.3,1969.9 452.5,1969.8 457.7,1969.7 462.9,1969.6 468.1,1969.4 473.3,1969.1 478.5,1968.6 483.8,1968.0 489.0,1967.0 494.2,1965.5 499.4,1963.4 504.6,1960.2 509.8,1955.7 515.0,1949.2 520.2,1940.2 525.4,1928.0 530.6,1912.1 535.8,1892.5 541.0,1869.7 546.2,1845.0 551.5,1820.3 556.7,1797.5 561.9,1777.9 567.1,1762.0 572.3,1749.8 577.5,1740.8 582.7,1734.3 587.9,1729.8 593.1,1726.6 598.3,1724.5 603.5,1723.0 608.8,1722.0 614.0,1721.4 619.2,1720.9 624.4,1720.6 629.6,1720.4 634.8,1720.3 640.0,1720.2 645.2,1720.1 650.4,1720.1 655.6,1720.1 660.8,1720.0 666.0,1720.0 671.2,1720.0 676.5,1720.0 681.7,1720.0 686.9,1720.0 692.1,1720.0 697.3,1720.0 702.5,1720.0 707.7,1720.0 712.9,1720.0 718.1,1720.0 723.3,1720.0 728.5,1720.0 733.8,1720.0 739.0,1720.0 744.2,1720.0 749.4,1720.0 754.6,1720.0 759.8,1720.0 765.0,1720.0" fill="none" stroke="#1b2430" stroke-width="2.4" stroke-dasharray="5 4"/>
+<line x1="343.1" y1="1970.0" x2="343.1" y2="1845.0" stroke="#0f7a6c" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="343.1" y="1992.0" font-size="12.5" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >b₁₁ (1 Block)</text>
+<line x1="546.2" y1="1970.0" x2="546.2" y2="1845.0" stroke="#1f5f8b" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="546.2" y="1992.0" font-size="12.5" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >b₉ (1 Meile)</text>
+<text x="86.0" y="2042.0" font-size="17" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >P(x_i = 1) = σ(a · (θ − b_i)),   σ(z) = 1 / (1 + e^(−z))</text>
+<text x="86.0" y="2074.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >b_i = Schwierigkeit: bei θ = b_i ist P = 0,5. a = Trennschärfe: Steigung der Kurve. Gestrichelt:</text>
+<text x="86.0" y="2094.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >a groß, die Kurve wird zur Stufe (Guttman). RAND-36 hat 3 Antwortstufen, also 2 Schwellen pro</text>
+<text x="86.0" y="2114.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Item (Graded Response Model).</text>
+<rect x="855.0" y="1600.0" width="765.0" height="560.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="881.0" y="1644.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >04</text>
+<text x="917.0" y="1644.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Facetten: drei Typen</text>
+<text x="881.0" y="1672.0" font-size="14.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Der Typ entscheidet, ob der Baum die Facette fragen muss.</text>
+<rect x="881.0" y="1700.0" width="713.0" height="124.0" rx="10" fill="#d9f0ea" stroke="#d9f0ea" stroke-width="1" />
+<text x="901.0" y="1734.0" font-size="21" fill="#0f7a6c" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Wert</text>
+<text x="1025.0" y="1734.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Position auf der θ-Achse (= b_i)</text>
+<text x="901.0" y="1762.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schlüssel</text>
+<text x="985.0" y="1762.0" font-size="13" fill="#1b2430" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >load</text>
+<text x="901.0" y="1786.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Beispiel</text>
+<text x="985.0" y="1786.0" font-size="13.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >1 Block · 1 Meile · 100 m</text>
+<text x="901.0" y="1810.0" font-size="13.5" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >✓ verlustfrei: s enthält die Position</text>
+<rect x="881.0" y="1840.0" width="713.0" height="124.0" rx="10" fill="#e9e5f5" stroke="#e9e5f5" stroke-width="1" />
+<text x="901.0" y="1874.0" font-size="21" fill="#6a5a9c" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Format</text>
+<text x="1025.0" y="1874.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >wie gefragt wird</text>
+<text x="901.0" y="1902.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schlüssel</text>
+<text x="985.0" y="1902.0" font-size="13" fill="#1b2430" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >measure · pole · anchor · Zeitraum</text>
+<text x="901.0" y="1926.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Beispiel</text>
+<text x="985.0" y="1926.0" font-size="13.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >energy vs fatigue · gestern vs letzte Woche</text>
+<text x="901.0" y="1950.0" font-size="13.5" fill="#6a5a9c" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >✓ verlustfrei für die Bedeutung</text>
+<rect x="881.0" y="1980.0" width="713.0" height="124.0" rx="10" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="901.0" y="2014.0" font-size="21" fill="#b4530b" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Kontext</text>
+<text x="1025.0" y="2014.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Bedingung, unter der θ auftritt</text>
+<text x="901.0" y="2042.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schlüssel</text>
+<text x="985.0" y="2042.0" font-size="13" fill="#1b2430" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >region · trigger · timing · modality · activity · quality</text>
+<text x="901.0" y="2066.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Beispiel</text>
+<text x="985.0" y="2066.0" font-size="13.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schwindel nach dem Aufstehen</text>
+<text x="901.0" y="2090.0" font-size="13.5" fill="#b4530b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >✗ verliert Information, wenn ungefragt</text>
+<text x="881.0" y="2135.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Messtyp-Regel: DSQ misst Symptomlast, FUNCAP Kapazität/Kosten, RAND-36 Niveau. Gleiche Bedeutung,</text>
+<text x="881.0" y="2153.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Zahlen nicht 1:1 vergleichbar.</text>
+<rect x="60.0" y="2190.0" width="765.0" height="640.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="86.0" y="2234.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >05</text>
+<text x="122.0" y="2234.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Der Baum: Projektion der Facetten</text>
+<text x="86.0" y="2262.0" font-size="14.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Ein Blatt sieht nur die gefragten Facetten A. Alles andere wirft die Projektion π_A weg.</text>
+<rect x="86.0" y="2296.0" width="360.0" height="100.0" rx="7" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="98.0" y="2318.0" font-size="13.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-71</text>
+<text x="178.0" y="2318.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Graying or blacking out after stan…</text>
+<text x="98.0" y="2342.0" font-size="13" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >M(i) = {AU2}</text>
+<rect x="98.0" y="2358.5" width="124.7" height="19.5" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="105.0" y="2372.0" font-size="10.5" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >trigger: standing</text>
+<rect x="228.7" y="2358.5" width="183.3" height="19.5" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="235.7" y="2372.0" font-size="10.5" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >quality: greying/blacking </text>
+<line x1="448.0" y1="2346.0" x2="486.0" y2="2406.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="86.0" y="2414.0" width="360.0" height="100.0" rx="7" fill="#fff" stroke="#1b2430" stroke-width="1.2" />
+<text x="98.0" y="2436.0" font-size="13.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-51</text>
+<text x="178.0" y="2436.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Dizziness or fainting</text>
+<text x="98.0" y="2460.0" font-size="13" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >M(i) = {AU2}</text>
+<rect x="98.0" y="2476.5" width="183.3" height="19.5" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="105.0" y="2490.0" font-size="10.5" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >quality: dizziness or fain</text>
+<line x1="448.0" y1="2464.0" x2="486.0" y2="2406.0" stroke="#5b6876" stroke-width="1.6" marker-end="url(#ar)" />
+<path d="M490,2346 L610,2376 L610,2436 L490,2466 Z" fill="#e1edf6" stroke="#1f5f8b" stroke-width="1.4"/>
+<text x="544.0" y="2402.0" font-size="21" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >π_A</text>
+<text x="544.0" y="2424.0" font-size="12" fill="#1f5f8b" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >Filter</text>
+<line x1="612.0" y1="2406.0" x2="650.0" y2="2406.0" stroke="#1f5f8b" stroke-width="1.6" marker-end="url(#ar)" />
+<rect x="652.0" y="2360.0" width="150.0" height="92.0" rx="8" fill="#e1edf6" stroke="#1f5f8b" stroke-width="1.5" />
+<text x="664.0" y="2384.0" font-size="14" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >Blatt ℓ</text>
+<text x="664.0" y="2406.0" font-size="13" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >G = {AU2}</text>
+<text x="664.0" y="2426.0" font-size="13" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >c|A = { }</text>
+<text x="664.0" y="2444.0" font-size="12" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >dizzy or faint</text>
+<text x="490.0" y="2492.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >A = {region, activity,</text>
+<text x="490.0" y="2510.0" font-size="12.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >     bladder, sweating}</text>
+<rect x="86.0" y="2534.0" width="713.0" height="106.0" rx="8" fill="#eef1f4" stroke="#eef1f4" stroke-width="1" />
+<text x="104.0" y="2564.0" font-size="16.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >trifft(ℓ, i)  ⇔  G_ℓ ∩ M(i) ≠ ∅  ∧  π_A(c_i) ~ c_ℓ</text>
+<text x="104.0" y="2592.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >verträglich = gleicher Wert ∨ &#x27;unspecified&#x27; ∨ Schlüssel fehlt</text>
+<text x="104.0" y="2616.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >L(i) = { ℓ | trifft(ℓ, i) }   Etikett eines Items</text>
+<text x="86.0" y="2676.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Doppelpfade: mehrere Klickwege führen zum selben Mapping (Heimat-Blatt + „Same leaf as“).</text>
+<text x="86.0" y="2696.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >|Pfade| ≥ |Mappings|, die Information ändert sich nicht.</text>
+<text x="86.0" y="2742.0" font-size="14" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Konstrukt-Blätter („… in general“) speichern nur das Konstrukt und treffen keine Items.</text>
+<rect x="855.0" y="2190.0" width="765.0" height="640.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="881.0" y="2234.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >06</text>
+<text x="917.0" y="2234.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Schubladen: die Auflösung des Baums</text>
+<text x="881.0" y="2262.0" font-size="14.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >i ~ j  ⇔  L(i) = L(j): gleiches Etikett, gleiche Schublade.</text>
+<text x="881.0" y="2296.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Der Baum unterscheidet Schubladen, aber keine Items innerhalb einer Schublade.</text>
+<text x="881.0" y="2326.0" font-size="15.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >|Items|  ≥  |Granule + alle Facetten|  ≥  |Schubladen|</text>
+<text x="881.0" y="2370.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >DSQ</text>
+<rect x="985.0" y="2371.0" width="535.0" height="17.0" rx="3" fill="#c3ccd5" stroke="#c3ccd5" stroke-width="1" />
+<text x="1526.0" y="2384.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >104</text>
+<text x="881.0" y="2384.0" font-size="11.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Items</text>
+<rect x="985.0" y="2393.0" width="509.3" height="17.0" rx="3" fill="#8fa3b6" stroke="#8fa3b6" stroke-width="1" />
+<text x="1500.3" y="2406.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >99</text>
+<text x="881.0" y="2406.0" font-size="11.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Granule + Facetten</text>
+<rect x="985.0" y="2415.0" width="339.5" height="17.0" rx="3" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="1" />
+<text x="1330.5" y="2428.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >66</text>
+<text x="881.0" y="2428.0" font-size="11.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schubladen</text>
+<text x="881.0" y="2468.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >RAND-36</text>
+<rect x="985.0" y="2469.0" width="185.2" height="17.0" rx="3" fill="#c3ccd5" stroke="#c3ccd5" stroke-width="1" />
+<text x="1176.2" y="2482.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >36</text>
+<rect x="985.0" y="2491.0" width="169.8" height="17.0" rx="3" fill="#8fa3b6" stroke="#8fa3b6" stroke-width="1" />
+<text x="1160.8" y="2504.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >33</text>
+<rect x="985.0" y="2513.0" width="87.5" height="17.0" rx="3" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="1" />
+<text x="1078.5" y="2526.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >17</text>
+<text x="881.0" y="2566.0" font-size="15" fill="#1b2430" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >FUNCAP</text>
+<rect x="985.0" y="2567.0" width="282.9" height="17.0" rx="3" fill="#c3ccd5" stroke="#c3ccd5" stroke-width="1" />
+<text x="1273.9" y="2580.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >55</text>
+<rect x="985.0" y="2589.0" width="282.9" height="17.0" rx="3" fill="#8fa3b6" stroke="#8fa3b6" stroke-width="1" />
+<text x="1273.9" y="2602.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >55</text>
+<rect x="985.0" y="2611.0" width="128.6" height="17.0" rx="3" fill="#1f5f8b" stroke="#1f5f8b" stroke-width="1" />
+<text x="1119.6" y="2624.0" font-size="13" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >25</text>
+<text x="881.0" y="2658.0" font-size="14" fill="#1b2430" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schubladen mit &gt; 1 Item, nach Typ der unterscheidenden Facette</text>
+<text x="881.0" y="2694.0" font-size="13.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >DSQ</text>
+<rect x="985.0" y="2678.0" width="224.0" height="22.0" rx="3" fill="#fae5d2" stroke="#b4530b" stroke-width="1" />
+<text x="1097.0" y="2694.0" font-size="12.5" fill="#b4530b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >14</text>
+<rect x="1213.0" y="2678.0" width="16.0" height="22.0" rx="3" fill="#d9f0ea" stroke="#0f7a6c" stroke-width="1" />
+<text x="1221.0" y="2694.0" font-size="12.5" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >1</text>
+<rect x="1233.0" y="2678.0" width="64.0" height="22.0" rx="3" fill="#e9e5f5" stroke="#6a5a9c" stroke-width="1" />
+<text x="1265.0" y="2694.0" font-size="12.5" fill="#6a5a9c" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >4</text>
+<rect x="1301.0" y="2678.0" width="16.0" height="22.0" rx="3" fill="#e1edf6" stroke="#1f5f8b" stroke-width="1" />
+<text x="1309.0" y="2694.0" font-size="12.5" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >1</text>
+<text x="881.0" y="2724.0" font-size="13.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >RAND-36</text>
+<rect x="985.0" y="2708.0" width="16.0" height="22.0" rx="3" fill="#fae5d2" stroke="#b4530b" stroke-width="1" />
+<text x="993.0" y="2724.0" font-size="12.5" fill="#b4530b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >1</text>
+<rect x="1005.0" y="2708.0" width="32.0" height="22.0" rx="3" fill="#d9f0ea" stroke="#0f7a6c" stroke-width="1" />
+<text x="1021.0" y="2724.0" font-size="12.5" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >2</text>
+<rect x="1041.0" y="2708.0" width="96.0" height="22.0" rx="3" fill="#e9e5f5" stroke="#6a5a9c" stroke-width="1" />
+<text x="1089.0" y="2724.0" font-size="12.5" fill="#6a5a9c" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >6</text>
+<text x="881.0" y="2754.0" font-size="13.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >FUNCAP</text>
+<rect x="985.0" y="2738.0" width="48.0" height="22.0" rx="3" fill="#fae5d2" stroke="#b4530b" stroke-width="1" />
+<text x="1009.0" y="2754.0" font-size="12.5" fill="#b4530b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >3</text>
+<rect x="1037.0" y="2738.0" width="160.0" height="22.0" rx="3" fill="#d9f0ea" stroke="#0f7a6c" stroke-width="1" />
+<text x="1117.0" y="2754.0" font-size="12.5" fill="#0f7a6c" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >10</text>
+<rect x="881.0" y="2771.0" width="66.1" height="21.0" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="888.0" y="2786.0" font-size="12" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >Kontext</text>
+<rect x="959.1" y="2771.0" width="43.8" height="21.0" rx="4" fill="#d9f0ea" stroke="#d9f0ea" stroke-width="1" />
+<text x="966.1" y="2786.0" font-size="12" fill="#0f7a6c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >Wert</text>
+<rect x="1014.8" y="2771.0" width="58.6" height="21.0" rx="4" fill="#e9e5f5" stroke="#e9e5f5" stroke-width="1" />
+<text x="1021.8" y="2786.0" font-size="12" fill="#6a5a9c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >Format</text>
+<rect x="1085.5" y="2771.0" width="73.5" height="21.0" rx="4" fill="#e1edf6" stroke="#e1edf6" stroke-width="1" />
+<text x="1092.5" y="2786.0" font-size="12" fill="#1f5f8b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >parallel</text>
+<text x="881.0" y="2814.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Typ automatisch nach Facetten-Schlüssel (Heuristik). Interaktiv prüfen: out/mapping-explorer.html</text>
+<rect x="60.0" y="2860.0" width="1560.0" height="300.0" rx="12" fill="#fff8ef" stroke="#b4530b" stroke-width="1.6" />
+<text x="86.0" y="2904.0" font-size="15" fill="#b4530b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >07</text>
+<text x="122.0" y="2904.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Das Kriterium: wann der Baum eine Facette weglassen darf</text>
+<text x="86.0" y="2946.0" font-size="15.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Formal: Der Baum darf eine Facette f unbefragt lassen, wenn sich in jeder Schublade alle Items, die sich nur</text>
+<text x="86.0" y="2969.0" font-size="15.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >in f unterscheiden, durch einen θ-Wert (Wert) oder eine Formulierung (Format) unterscheiden. Unterscheiden</text>
+<text x="86.0" y="2992.0" font-size="15.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >sie sich durch eine Bedingung (Kontext), muss f gefragt werden, oder der Verlust wird bewusst in Kauf</text>
+<text x="86.0" y="3015.0" font-size="15.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >genommen.</text>
+<text x="86.0" y="3070.0" font-size="15.5" fill="#b4530b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Locker: Eine Schublade ist harmlos, wenn ihre Items sich nur durch Wert oder Format unterscheiden. Bei</text>
+<text x="86.0" y="3093.0" font-size="15.5" fill="#b4530b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Kontext verliert der Baum Information.</text>
+<rect x="1050.0" y="2930.0" width="540.0" height="200.0" rx="10" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="1068.0" y="2958.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Beispiel: Schublade EN4 im DSQ (8 Items)</text>
+<text x="1068.0" y="2988.0" font-size="12.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-76</text>
+<rect x="1160.0" y="2974.0" width="225.4" height="20.0" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="1167.0" y="2988.0" font-size="11" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >trigger: mild physical activity</text>
+<text x="1068.0" y="3012.0" font-size="12.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-77</text>
+<rect x="1160.0" y="2998.0" width="211.8" height="20.0" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="1167.0" y="3012.0" font-size="11" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >trigger: mild mental activity</text>
+<text x="1068.0" y="3036.0" font-size="12.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-100</text>
+<rect x="1160.0" y="3022.0" width="232.2" height="20.0" rx="4" fill="#e9e5f5" stroke="#e9e5f5" stroke-width="1" />
+<text x="1167.0" y="3036.0" font-size="11" fill="#6a5a9c" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >measure: recovery time (reverse)</text>
+<text x="1068.0" y="3060.0" font-size="12.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-102</text>
+<rect x="1160.0" y="3046.0" width="232.2" height="20.0" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="1167.0" y="3060.0" font-size="11" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >trigger: minimal physical effort</text>
+<text x="1068.0" y="3084.0" font-size="12.5" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >DSQ2-103</text>
+<rect x="1160.0" y="3070.0" width="164.0" height="20.0" rx="4" fill="#fae5d2" stroke="#fae5d2" stroke-width="1" />
+<text x="1167.0" y="3084.0" font-size="11" fill="#b4530b" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >trigger: mental effort</text>
+<text x="1068.0" y="3118.0" font-size="13" fill="#b4530b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >→ Zusatzfrage nach EN4 (körperlich / geistig) hebt den Verlust auf.</text>
+<rect x="60.0" y="3190.0" width="500.0" height="420.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="86.0" y="3234.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >08</text>
+<text x="122.0" y="3234.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Überlappung</text>
+<circle cx="260.0" cy="3360" r="80" fill="#1f5f8b" fill-opacity=".14" stroke="#1f5f8b" stroke-width="1.5"/>
+<circle cx="360.0" cy="3360" r="80" fill="#8a3f6f" fill-opacity=".12" stroke="#8a3f6f" stroke-width="1.5"/>
+<text x="218.0" y="3268.0" font-size="13" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >S (Score)</text>
+<text x="402.0" y="3268.0" font-size="13" fill="#8a3f6f" font-weight="600" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle" >M(i) (Item)</text>
+<text x="222.0" y="3365.0" font-size="11.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >CG1 CG3</text>
+<text x="222.0" y="3382.0" font-size="11.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >CG5 CG6</text>
+<text x="310.0" y="3350.0" font-size="11.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >CG2</text>
+<text x="310.0" y="3367.0" font-size="11.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >CG4</text>
+<text x="310.0" y="3384.0" font-size="11.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >CG7</text>
+<text x="402.0" y="3367.0" font-size="11.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="middle" >SN2</text>
+<text x="86.0" y="3490.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >J(S, M(i)) = |S ∩ M(i)| / |S ∪ M(i)|</text>
+<text x="86.0" y="3520.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >User wählt CG1–CG7, FUNCAP 32 trägt {CG2, CG4, CG7, SN2}: J =</text>
+<text x="86.0" y="3539.0" font-size="13.5" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >3/8. Abdeckung einer Skala: erreichte Items / Items der Skala.</text>
+<rect x="590.0" y="3190.0" width="500.0" height="420.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="616.0" y="3234.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >09</text>
+<text x="652.0" y="3234.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Polarität</text>
+<text x="616.0" y="3280.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Die Richtung wird vor dem Mapping gesetzt (Standard: hoch</text>
+<text x="616.0" y="3301.0" font-size="14.5" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >= besser). Gespeichert wird ein Vorzeichen:</text>
+<text x="616.0" y="3360.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >sgn(s) = +1  wenn hoch = gesünder</text>
+<text x="616.0" y="3386.0" font-size="15" fill="#1b2430" font-weight="500" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >sgn(s) = −1  sonst</text>
+<text x="616.0" y="3438.0" font-size="16" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >±</text>
+<text x="660.0" y="3438.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >bipolar: Label passt sich an, keine Frage</text>
+<text x="616.0" y="3470.0" font-size="16" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >▲▼</text>
+<text x="660.0" y="3470.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >good / bad: bei Widerspruch einmal bestätigen</text>
+<text x="616.0" y="3502.0" font-size="16" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >○</text>
+<text x="660.0" y="3502.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >neutral: nie fragen (Geräte, EN5)</text>
+<rect x="1120.0" y="3190.0" width="500.0" height="420.0" rx="12" fill="#ffffff" stroke="#cfd6de" stroke-width="1" />
+<text x="1146.0" y="3234.0" font-size="15" fill="#1f5f8b" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >10</text>
+<text x="1182.0" y="3234.0" font-size="25" fill="#1b2430" font-weight="600" font-family="'Source Serif 4', Georgia, serif" text-anchor="start" >Symbole</text>
+<text x="1146.0" y="3276.0" font-size="14.5" fill="#8a3f6f" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >θ_g</text>
+<text x="1240.0" y="3276.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >latente Variable</text>
+<text x="1146.0" y="3303.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >c, c_i</text>
+<text x="1240.0" y="3303.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Facetten (Bedingung)</text>
+<text x="1146.0" y="3330.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >A</text>
+<text x="1240.0" y="3330.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >gefragte Facetten-Schlüssel</text>
+<text x="1146.0" y="3357.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >π_A</text>
+<text x="1240.0" y="3357.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Projektion auf A</text>
+<text x="1146.0" y="3384.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >M(i)</text>
+<text x="1240.0" y="3384.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Granules von Item i</text>
+<text x="1146.0" y="3411.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >L(i)</text>
+<text x="1240.0" y="3411.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Blätter, die i treffen</text>
+<text x="1146.0" y="3438.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >~</text>
+<text x="1240.0" y="3438.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >gleiche Schublade</text>
+<text x="1146.0" y="3465.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >λ</text>
+<text x="1240.0" y="3465.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Ladung / Gewicht</text>
+<text x="1146.0" y="3492.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >b_i, a</text>
+<text x="1240.0" y="3492.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Schwierigkeit, Trennschärfe</text>
+<text x="1146.0" y="3519.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >ε</text>
+<text x="1240.0" y="3519.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Rauschen</text>
+<text x="1146.0" y="3546.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >Δθ</text>
+<text x="1240.0" y="3546.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Änderung zum Anker</text>
+<text x="1146.0" y="3573.0" font-size="14.5" fill="#1b2430" font-weight="600" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" text-anchor="start" >J</text>
+<text x="1240.0" y="3573.0" font-size="14" fill="#1b2430" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Jaccard-Index</text>
+<text x="60.0" y="3656.0" font-size="13" fill="#5b6876" font-weight="400" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" text-anchor="start" >Generiert aus data/mecfs-criteria.xlsx → merge.json mit pipeline/build_poster.py · 2026-11-02 · 69 Granules · 101 Blätter · Text: THEORY.md</text>
+</svg>
