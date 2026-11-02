@@ -1,3 +1,110 @@
+# HANDOFF: ME/CFS symptom mapping – V1 CLOSED (2 Nov 2026, evening)
+
+## Status
+The symptom tree is **closed as V1**. No further work on it until the app V1 is done (next week). Then start with the
+new granularisation workflow (below). The user commits himself; deliveries are zips with paths relative to v2/.
+
+## What the last session did (user decisions 2 Nov 2026)
+1. **FUNCAP = cost items (verified).** All 55 FUNCAP55 items (and all 27 FUNCAP27) share the stem "What are the consequences
+   for you if you perform …? To what extent does this affect how much else you can do?", the 0–6 consequence scale and the
+   timeframe (checked against `Instrument items`; sections.py asserts one response scale). Model:
+   x = f(θ_budget − d(activity, abilities)) + ε. Abilities only raise the demand d → facet, not granule.
+2. **New granule EN6 "Activity tolerance / energy budget"** (section Energy, construct FUN). All 55 FUNCAP items → EN6 only,
+   no exceptions. Facets: `load type` (= FUNCAP domain A–H: self-care, walking and exercise, upright, housework,
+   communication, outside home, light and sound, concentration; context, ASKED) + `load` (size, value type).
+   Old mapping kept in each item's note ("Until V1 close: …"). Generated in sections.py (`LOAD_TYPE`, `F55_LOAD`,
+   `F55_BEFORE`, `F55_ITEMS`, `COST_NODE`).
+3. **CG8 removed** (only item was F55-49). "My memory" is now a direct leaf (CG5).
+4. **Tree:** PF-N3 (was "A specific everyday activity" → PF1/PF3 [activity]) is now the cost node "What an activity costs
+   me (energy budget)" → 8 load-type leaves + "in general" (unspecified) + "It changes – I say which activity at each
+   check-in" (`load type: per check-in`, flag `facet per check-in` = the app's configuration option: fixed facet or named
+   per check-in) + multi-select. Home = PF-N3 (FUN); EN-N3 under Energy is the second path (same leaves). Polarity of the
+   cost leaves: bad (confirm question on mismatch). Facet `activity` no longer asked (STRICT is now `load type`).
+5. **Taxonomy:** no item type 7. FUNCAP = type 2 (graded) on EN6, the activity sets the difficulty. "Cost" is a measure type;
+   the measure-type rule now says a measure type that changes the measured VARIABLE is not a format.
+6. **Instrument characterisation**: THEORY.md §2.7 (table + profiles) and poster panel 08 (live from `model.profile`,
+   item type per item via `model.item_types`). Numbers V1: DSQ 104 items / 56 granules / 66 drawers, mostly context variants
+   + single; RAND-36 36 / 14 / 15, mostly parallel; FUNCAP 55 / 1 / 8, all graded; Bell global; PGIC change.
+7. **Poster corrections done:** no more hard truncation (`fit()` scales font), s-formula now s = h(θ_g(c_s)) + ε with
+   stored π_A(c_s); examples that used FUNCAP as composite replaced (composite: DSQ2-38 → CG6, CG7; Jaccard: DSQ2-80
+   {CG4, EN4}, J = 1/8; panel 01 walking: R36 only). Panels renumbered: 08 instruments, 09 polarity, 10 overlap,
+   11 symbol index, 12 outlook (incl. new workflow).
+8. **THEORY.md → out/theory.html** (pipeline/build_theory_html.py, needs `markdown`; build.sh runs it).
+9. Method tab: rules upserted ("Measure type", "Facet 'activity'" superseded, "Asked facets", "Cost items (FUNCAP)",
+   "Facet 'load type'", "Granule removed: CG8"). Recalc: 0 errors.
+
+## Still not understood by the user (explicitly parked)
+A / π_A and the s-formula (questions 4 and 5 below). The formula was rewritten, but he has not had an explanation that
+worked. Explain only when he asks; differently than before (concrete example first).
+
+## After App V1 (user, 2 Nov 2026) – also in THEORY.md §9 and poster panel 12
+New granularisation workflow, developer more involved, systematic:
+1. Read the instrument papers → general understanding (construct, question, scale, scoring).
+2. Sketch how the tree connects to this instrument type and what to watch out for (lesson V1: FUNCAP asks cost, not ability).
+3. An application where the AI proposes the granularisation per section (cross-instrument), maybe grouped by construct
+   directly. The reviewer sees all items of the section plus the original question and scale of each instrument.
+4. The reviewer must approve before the next section / construct.
+5. Finally the tests (blind agent T1 + another one, e.g. blind second annotator for M).
+Also: translate the DIY theory into psychometrics/statistics conventions; pain regions as own granules; decide the DSQ
+context drawers (e.g. extra question after EN4); T1 on FUNCAP (user expected it to fail before the remap).
+
+---
+
+# (history) V2, session 2 Nov 2026 (afternoon) – questions 1–3 and 6 answered/implemented in the V1 close above
+
+## START HERE (next chat)
+User took a break; continue in a fresh chat. FIRST answer the open questions below, bottom-up, ONE topic per answer,
+concrete example first (he did not understand the last explanations of A/π_A and of the s-formula – explain differently,
+not the same way again). Do NOT apply the pending corrections before he has his answers; he asked "answer first".
+
+**Before questions 1–3:** read FUNCAP, RAND-36 and DSQ COMPLETELY from `All items` (text, response format, granules,
+facets). The previous chat only saw samples (DSQ ~60 items with facets, RAND-36 items 1–24, FUNCAP ~15 items). The claim
+"all 55 FUNCAP items share the 0–6 cost scale" was generalised from F55-29..32 – VERIFY it.
+
+### Open questions of the user (in this order of importance)
+1. **FUNCAP = cost items (most important).** User: FUNCAP 32 "dinner party" does not measure divided attention /
+   comprehension / expression / noise sensitivity, but how much the activity costs (energy budget, crash). A person with
+   very low cognitive ability but no energy problem would answer 6. "Granules are actually facets" for these items.
+   Claude's answer (accepted as direction, not confirmed): x = f(θ_tol − d(c)) + ε; θ_tol = tolerance / energy budget
+   (EN2 fatigability, EN4 PEM), d(c) = demand of the activity; CG/SN granules describe the KIND of load (→ facet, e.g.
+   key load-type); individual context (friends vs strict family) = unasked, person-specific facet (person × item
+   interaction, missing measurement invariance → G-theory). Probably affects all FUNCAP items (0–6 consequence scale seen on F55-29..32 – UNVERIFIED for the rest),
+   incl. physical ones. The Messtyp rule called FUNCAP "format only" – too weak: the measured variable changes.
+   Proposal: item type 7 "Kosten" in the taxonomy + remapping as future todo. User unsure whether FUNCAP needs a new type.
+2. **Update the item taxonomy.** User: FUNCAP is not composite-heavy, it mostly asks the same variable (budget) under
+   different activities. Rethink the six types (THEORY.md §2) with this.
+3. **Characterise the instruments by item types** (user: "very important", somewhere visible – poster + THEORY.md).
+   User's sketch: FUNCAP = budget/cost per activity; DSQ = many different variables (symptom frequency + severity);
+   RAND-36 = ? (user guess: much averaging, several varied questions per variable). Compute from data first
+   (All items: Response format, Measure type, granules per item, drawers per instrument) and show it, e.g. per instrument:
+   items, granules, items per granule, share parallel / graded / composite / cost, typical facet types lost.
+4. **A and π_A** not understood ("A seems to be the tree – what is π_A then?"). Facts: A = list of facet KEYS the tree
+   asks somewhere ({region, activity, bladder, sweating}); π_A = operation that deletes all facets whose key is not in A.
+5. **s = h(θ, π_A(c)) + ε** not understood (user confidence 70 %; asked why not h(A(θ, c))). Claude admitted the formula
+   mixes two things. Cleaner: s = h(θ_g(c_s)) + ε (c_s = what the user really means); we only observe π_A(c_s).
+   A never acts on θ: the granule is always stored completely (G_ℓ). Rewrite in poster 01 + THEORY.md §1 accordingly.
+6. User expects T1 (blind Haiku) to perform badly on FUNCAP – plausible given 1.; worth testing after the taxonomy fix.
+
+### Pending corrections (apply only after the questions are answered)
+- Poster chips are hard-truncated at 28 chars ("greying/blacking ou", "dizziness or fainti") → no truncation / wrap
+  (pipeline/build_poster.py, `chip(...)[:28]` in panel 05 and similar `[:26]`, `[:40]`, `[:46]` cuts).
+- Rewrite the s-formula (see 5.) and A / π_A wording in poster panel 01 and THEORY.md §1.
+- New future todo (mark "nach App V1"): translate our DIY theory into the conventions of psychometrics / statistics.
+- Add item type 7 + instrument characterisation (see 1.–3.).
+- R3 confirmed by user (each facet key at most once per path). R1, R2 accepted.
+
+### Artefacts (all generated by ./build.sh from data/mecfs-criteria.xlsx)
+- out/theory-poster.svg – Lernplakat, panels 01–11 (generated by pipeline/build_poster.py, numbers live from merge.json)
+- out/mapping-explorer.html – explorer, views Schubladen / Verluste / Granules; also published:
+  https://claude.ai/artifact/WiWDfjP2Zppk2MEiMFj2fa (republish from the new chat via `url`)
+- out/mecfs-tree.svg – the tree (pipeline/svg_tree.py)
+- THEORY.md – text version of the theory (same notation as the poster, symbol index at the end)
+- xlsx sheets worth reading for 3.: `All items` (cols: Response format, Measure type, Granule(s), Facets),
+  `Instrument items` (verbatim, incl. FUNCAP27/DSQ-1), `Method` (rules)
+- User commits himself (never commit/push). Deliver changed files as a zip with paths relative to v2/.
+
+---
+
 # HANDOFF: ME/CFS symptom mapping – V2 (2 Nov 2026)
 
 ## START HERE (V2)
@@ -19,6 +126,12 @@ lossless iff drawers differ only by Wert/Format); Jaccard overlap; polarity sign
 2. Mapping candidates: F55-32 dinner party + CG6 (word finding); R36-5 / R36-7 / R36-16 (see below).
 3. Tests: T1 for DSQ + FUNCAP (3 runs), Test 3 (blind 2nd annotator for M).
 4. Step 14 decisions 3–4, step 15 JSON export (unchanged, see below).
+5. FUTURE (after app V1, user idea 2 Nov): LLM extracts per-check-in facets c_t from voice/text logs → refines the
+   drawer per measurement (THEORY.md §10). Analyse at finest level with enough data, partial pooling to drawer; beware
+   informative missingness. Not now – priority is app V1 (UX, Apple Health, privacy backend, presentations).
+6. FUTURE (user, 2 Nov): build the tree on scientific standards (Guttman facet theory, Cronbach generalizability theory,
+   or newer if those are outdated); test the decomposition θ_g(c) = θ_g + δ_g(c) per granule; todo: pain regions
+   (head, belly …) become separate granules instead of facets of PN1 (user's view). See THEORY.md §9.
 
 How to work with the user: bottom-up, one concept per answer, concrete example first, formulas welcome; no xlsx – use
 the explorer / SVG. Abbreviations (non-IT) listed before the answer on first use.

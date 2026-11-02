@@ -10,3 +10,4 @@ python3 pipeline/merge.py "$X"             # All granules / All items / Full tre
 python3 pipeline/svg_tree.py "$J" out/mecfs-tree.svg
 python3 pipeline/build_explorer.py "$J" out/mapping-explorer.html
 python3 pipeline/build_poster.py "$J" out/theory-poster.svg
+python3 pipeline/build_theory_html.py THEORY.md out/theory.html

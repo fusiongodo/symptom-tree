@@ -86,6 +86,13 @@ aside blockquote{margin:8px 0 0;padding:8px 10px;background:var(--bg);border-rad
 .kv dt{color:var(--muted)} .kv dd{margin:0}
 .leafline{font-size:13px;padding:4px 0}
 .hl{background:var(--hl)}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:14px 0 6px}
+.chain div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:12px;color:var(--muted)}
+.chain b{display:block;font-family:var(--f-mono);font-size:22px;color:var(--ink);font-weight:500}
+.chain .arr{font-family:var(--f-mono);font-size:14px;color:var(--warn);text-align:center}
+.chain .arr small{display:block;font-family:var(--f-body);font-size:11px;color:var(--muted)}
+.grp{border-left:3px solid var(--line);padding-left:10px;margin-top:10px}
+.glab{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .dhead{font-family:var(--f-display);font-size:17px;font-weight:600;margin-bottom:6px}
 .dhead .id{font-size:15px}
 [data-tip]{position:relative;cursor:help}
@@ -106,6 +113,7 @@ aside blockquote{margin:8px 0 0;padding:8px 10px;background:var(--bg);border-rad
   <h1>Mapping Explorer</h1>
   <div class="tabs" role="group" aria-label="Ansicht">
     <button class="tab" id="tab-k" data-view="k">Schubladen</button>
+    <button class="tab" id="tab-v" data-view="v">Verluste</button>
     <button class="tab" id="tab-g" data-view="g">Granules</button>
   </div>
   <div class="chips" id="instchips" role="group" aria-label="Instrument"></div>
@@ -122,7 +130,7 @@ const D=JSON.parse(document.getElementById('data').textContent);
 const INST=['DSQ','RAND-36','FUNCAP','Bell','PGIC'];
 const PRE={'DSQ':'DSQ','RAND-36':'R36','FUNCAP':'F55','Bell':'Bell','PGIC':'PGIC'};
 const FT={load:'wert',measure:'format',pole:'format',anchor:'format',zeitraum:'format',
-  region:'kontext',trigger:'kontext',timing:'kontext',modality:'kontext',activity:'kontext',quality:'kontext',type:'kontext'};
+  region:'kontext',trigger:'kontext',timing:'kontext',modality:'kontext',activity:'kontext',quality:'kontext',type:'kontext','load type':'kontext'};
 const FTNAME={wert:'Wert',format:'Format',kontext:'Kontext'};
 const ftype=k=>FT[k]||'kontext';
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -225,28 +233,54 @@ function inspector(id){
   el.hidden=false;
   document.getElementById('closeinsp').onclick=()=>{el.hidden=true};
 }
+function viewV(){
+  const L=D.losses[state.inst], d1=L.n0-L.n1, d2=L.n1-L.n2;
+  const crumb=l=>l.path.map((p,k)=>k===l.path.length-1?`<b>${esc(p)}</b>`:esc(p)).join(' › ');
+  const diffOf=its=>{const keys=new Set();its.forEach(i=>facets(i).forEach(([k])=>keys.add(k)));
+    return [...keys].filter(k=>new Set(its.map(i=>facets(i).filter(f=>f[0]===k).map(f=>f[1]).join(' / ')||'—')).size>1)};
+  let h=`<div class="lead"><h2>Verluste · ${esc(state.inst)}</h2>
+   <p>Drei Einteilungen derselben Items, jede gröber als die vorige. Jede E₁-Gruppe liegt komplett in einer Schublade (geschachtelt).</p></div>
+   <div class="chain"><div><b>${L.n0}</b>E₀ Items</div><span class="arr">→ −${d1}<small>Annotation</small></span>
+   <div><b>${L.n1}</b>E₁ gleiche Granules + Facetten</div><span class="arr">→ −${d2}<small>Baum</small></span><div><b>${L.n2}</b>E₂ Schubladen</div></div>
+   <h4>E₀ → E₁ · identisch annotiert (−${d1})</h4>
+   <p class="note">Diese Items haben im xlsx dieselben Granules und dieselben Facetten. Kein Baum kann sie trennen. Was sie trotzdem unterscheidet (oft nur der Zeitraum), ist umrandet.</p>`;
+  h+=L.e1.length?L.e1.map(g=>{const its=g.map(id=>I[id]),df=diffOf(its);
+    return `<div class="card"><div class="dhead">${its[0].g.map(x=>`<span class="id" data-tip="${esc(gtip(x))}" tabindex="0">${x}</span>`).join(' ')} · ${its.length} Items → 1</div>${its.map(i=>itemRow(i,df)).join('')}</div>`}).join('')
+    :'<p class="muted">Keine: jedes Item ist eindeutig annotiert.</p>';
+  h+=`<h4>E₁ → E₂ · der Baum legt zusammen (−${d2})</h4>
+   <p class="note">Jede Karte ist eine Schublade mit mehreren E₁-Gruppen. Die Gruppen unterscheiden sich in Facetten, die der Baum nicht fragt (umrandet). Pro Karte gehen Gruppen − 1 Unterscheidungen verloren.</p>`;
+  h+=L.e2.map(x=>{const lg=[...new Set(x.leaves.flatMap(id=>LEAF[id].gl))], all=x.groups.flat().map(id=>I[id]), df=diffOf(all);
+    const v=x.verdict==='parallel'?'par':x.verdict;
+    return `<div class="card"><div class="dhead">${lg.map(g=>`<span class="id" data-tip="${esc(gtip(g))}" tabindex="0">${g}</span> ${esc(G[g]?.name||'')}`).join(' · ')}</div>
+     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span class="verdict v-${v}">${VTXT[v]}</span><span class="muted">${x.groups.length} Gruppen → 1 · −${x.groups.length-1}</span></div>
+     ${x.leaves.map(id=>`<div class="crumb" style="margin-top:6px">${crumb(LEAF[id])}</div>`).join('')}
+     ${x.groups.map((g,k)=>`<div class="grp"><div class="glab">Gruppe ${k+1}${g.length>1?' · identisch annotiert':''}</div>${g.map(id=>itemRow(I[id],df)).join('')}</div>`).join('')}</div>`}).join('');
+  return h;
+}
 function render(){
   document.getElementById('tab-k').setAttribute('aria-pressed',state.view==='k');
   document.getElementById('tab-g').setAttribute('aria-pressed',state.view==='g');
-  document.getElementById('instchips').innerHTML=(state.view==='k'?['DSQ','RAND-36','FUNCAP']:INST).map(x=>
-    `<button class="fchip" data-inst="${x}" aria-pressed="${state.view==='k'?x===state.inst:state.instSet.has(x)}">${x}</button>`).join('');
+  document.getElementById('tab-v').setAttribute('aria-pressed',state.view==='v');
+  const one=state.view!=='g';
+  document.getElementById('instchips').innerHTML=(one?['DSQ','RAND-36','FUNCAP']:INST).map(x=>
+    `<button class="fchip" data-inst="${x}" aria-pressed="${one?x===state.inst:state.instSet.has(x)}">${x}</button>`).join('');
   document.getElementById('nav').innerHTML=navHTML();
-  document.getElementById('main').innerHTML=state.view==='g'?viewG():viewK();
+  document.getElementById('main').innerHTML=state.view==='g'?viewG():state.view==='v'?viewV():viewK();
 }
 function go(hash){
   const h=(hash||'').replace(/^#/,'');
   if(h.startsWith('g-')&&G[h.slice(2)]){state.view='g';state.g=h.slice(2)}
-  else if(h.startsWith('k-')){state.view='k';state.inst={DSQ:'DSQ',R36:'RAND-36',F55:'FUNCAP'}[h.slice(2)]||'DSQ'}
+  else if(h.startsWith('k-')||h.startsWith('v-')){state.view=h[0];state.inst={DSQ:'DSQ',R36:'RAND-36',F55:'FUNCAP'}[h.slice(2)]||'DSQ'}
   render();
   if(h.startsWith('i-')&&I[h.slice(2)]) inspector(h.slice(2));
 }
 document.addEventListener('click',e=>{
   const t=e.target.closest('button'); if(!t) return;
-  if(t.dataset.view){ if(t.dataset.view==='g'){location.hash='g-'+(state.g||'PF2')} else {location.hash='k-'+PRE[state.inst].replace('DSQ','DSQ')} }
+  if(t.dataset.view){ if(t.dataset.view==='g'){location.hash='g-'+(state.g||'PF2')} else {location.hash=t.dataset.view+'-'+PRE[state.inst]} }
   else if(t.dataset.g){document.getElementById('insp').hidden=true; location.hash='g-'+t.dataset.g; window.scrollTo(0,0)}
   else if(t.dataset.item){inspector(t.dataset.item)}
   else if(t.dataset.inst){const x=t.dataset.inst;
-    if(state.view==='k'){location.hash='k-'+PRE[x]}
+    if(state.view!=='g'){location.hash=state.view+'-'+PRE[x]}
     else{state.instSet.has(x)?state.instSet.delete(x):state.instSet.add(x);render()}}
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('insp').hidden=true});

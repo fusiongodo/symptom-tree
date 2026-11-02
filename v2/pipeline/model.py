@@ -17,7 +17,7 @@ FACET_TYPE = {
     "load": "wert",
     "measure": "format", "pole": "format", "anchor": "format", "zeitraum": "format",
     "region": "kontext", "trigger": "kontext", "timing": "kontext", "modality": "kontext",
-    "activity": "kontext", "quality": "kontext", "type": "kontext",
+    "activity": "kontext", "quality": "kontext", "type": "kontext", "load type": "kontext",
 }
 INSTRUMENTS = ["DSQ", "RAND-36", "FUNCAP", "Bell", "PGIC"]
 DRAWER_INSTRUMENTS = ["DSQ", "RAND-36", "FUNCAP"]
@@ -114,3 +114,66 @@ def resolution(M, inst):
     multi = [d for d in ds if len(d["items"]) > 1]
     by = {v: sum(d["verdict"] == v for d in multi) for v in ("kontext", "wert", "format", "parallel")}
     return dict(items=len(its), full=len(full), drawers=len(ds), multi=len(multi), **by)
+
+
+def partitions(M, inst):
+    """Three nested partitions of the mapped items of one instrument (see THEORY.md §5):
+    E0 = items, E1 = same granules + same facets (annotation), E2 = same leaves (drawers).
+    Returns the losses: e1 = E1 groups with > 1 item (lost by the annotation),
+    e2 = drawers holding > 1 E1 group (lost by the tree), each as a list of E1 groups."""
+    its = [i for i in M["items"] if i["inst"] == inst and i["status"] == "mapped"]
+    key1 = lambda i: (tuple(sorted(i["g"])), tuple(sorted(tuple(f) for f in i["f"])))
+    g1 = defaultdict(list)
+    for i in its: g1[key1(i)].append(i)
+    e2 = []
+    for d in drawers(M, inst):
+        groups = []
+        for i in d["items"]:
+            for g in groups:
+                if key1(g[0]) == key1(i): g.append(i); break
+            else: groups.append([i])
+        assert all(len(g1[key1(g[0])]) == len(g) for g in groups), "partitions not nested"
+        if len(groups) > 1: e2.append(dict(drawer=d, groups=groups))
+    return dict(n0=len(its), n1=len(g1), n2=len(drawers(M, inst)),
+                e1=[g for g in g1.values() if len(g) > 1], e2=e2)
+
+
+ITEM_TYPES = ["einzeln", "parallel", "gestuft", "kontext", "composite", "global", "änderung"]
+
+
+def item_types(M, inst):
+    """Item type per mapped item of one instrument (THEORY.md §2.7). Rule, in this order:
+    änderung (GL3) > global (GL1/GL2) > composite (> 1 granule) > relation to the other items of the same drawer
+    with the same granules: none -> einzeln; differ by a context facet -> kontext (variant, lost if not asked);
+    by a value facet -> gestuft; only by format or not at all -> parallel."""
+    out = {}
+    for d in drawers(M, inst):
+        for i in d["items"]:
+            g = set(i["g"])
+            if "GL3" in g: out[i["id"]] = "änderung"; continue
+            if g & {"GL1", "GL2"}: out[i["id"]] = "global"; continue
+            if len(g) > 1: out[i["id"]] = "composite"; continue
+            peers = [j for j in d["items"] if j is not i and set(j["g"]) == g]
+            if not peers: out[i["id"]] = "einzeln"; continue
+            mine = {k: v for k, v in facets_with_timeframe(i)}
+            types = set()
+            for j in peers:
+                theirs = {k: v for k, v in facets_with_timeframe(j)}
+                types |= {ftype(k) for k in set(mine) | set(theirs) if mine.get(k) != theirs.get(k)}
+            out[i["id"]] = "kontext" if "kontext" in types else "gestuft" if "wert" in types else "parallel"
+    return out
+
+
+def profile(M, inst):
+    """Numbers for the instrument characterisation: items, granules, items per granule, drawers, type counts, measure types."""
+    from collections import Counter
+    its = [i for i in M["items"] if i["inst"] == inst and i["status"] == "mapped"]
+    gs = Counter(g for i in its for g in i["g"])
+    t = item_types(M, inst) if inst in DRAWER_INSTRUMENTS else {}
+    if not t:
+        for i in its:
+            g = set(i["g"]); t[i["id"]] = "änderung" if "GL3" in g else "global" if g & {"GL1", "GL2"} else "einzeln"
+    return dict(items=len(its), granules=len(gs), per_granule=(len(its) / len(gs)) if gs else 0,
+                max_granule=gs.most_common(1)[0] if gs else None,
+                drawers=len(drawers(M, inst)) if inst in DRAWER_INSTRUMENTS else len(its),
+                types=Counter(t.values()), mt=Counter(i["mt"] for i in its), comp=sum(len(i["g"]) > 1 for i in its))

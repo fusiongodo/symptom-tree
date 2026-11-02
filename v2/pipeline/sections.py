@@ -25,6 +25,55 @@ def short_rf(rf):
     return rf if len(rf) <= 60 else rf[:57] + "…"
 
 # =====================================================================
+# FUNCAP = cost items (V1 close, 2 Nov 2026). Every FUNCAP item asks the same question
+# ("What are the consequences for you if you perform …? To what extent does this affect how much else you can do?")
+# on the same 0–6 consequence scale. Measured variable = activity tolerance / energy budget (EN6);
+# the activity is the condition: facet 'load type' (= FUNCAP domain A–H, asked) + 'load' (size of the activity).
+LOAD_TYPE = {  # FUNCAP domain letter -> (facet value, home leaf text in the tree)
+ "A": ("self-care", "What washing, dressing or the toilet costs me"),
+ "B": ("walking and exercise", "What walking or exercise costs me"),
+ "C": ("upright", "What sitting or standing upright costs me"),
+ "D": ("housework", "What housework or cooking costs me"),
+ "E": ("communication", "What talking and being with people costs me"),
+ "F": ("outside home", "What getting out (errands, shopping, transport) costs me"),
+ "G": ("light and sound", "What being in light or noise costs me"),
+ "H": ("concentration", "What reading, screens or concentrating costs me"),
+}
+F55_LOAD = {1: "toilet", 2: "brushing teeth", 3: "showering seated, assisted", 4: "showering seated", 5: "showering standing",
+ 6: "out of bed, 1 h", 7: "dressing", 8: "room to room", 9: "100 m", 10: "100 m – 1 km", 11: "1 km level", 12: "1 km hilly",
+ 13: "raised heart rate, 15 min", 14: "raised heart rate, 30 min", 15: "sitting in bed, 30 min", 16: "chair, 10 min",
+ 17: "chair, 2 h", 18: "standing, 5 min", 19: "standing, 30 min", 20: "light housework, 30 min", 21: "heavy housework, 30 min",
+ 22: "laundry", 23: "cold meal", 24: "simple hot meal", 25: "complex meal, 1 h", 26: "a few words", 27: "conversation, 5 min",
+ 28: "conversation, 30 min", 29: "handwriting, short", 30: "conversation with 3 people, 30 min", 31: "socializing, 1 h",
+ 32: "dinner party / family event", 33: "stepping outside", 34: "necessary errand", 35: "grocery shopping",
+ 36: "leisure (café, shopping)", 37: "car passenger, 15 min", 38: "public transport", 39: "organised classes/sports",
+ 40: "dim light, 30 min", 41: "normal indoor light, 1 h", 42: "daylight, 2 h", 43: "quiet conversation nearby",
+ 44: "noisy environment, 1 h", 45: "high noise (cinema, concert)", 46: "short text on phone", 47: "light reading",
+ 48: "1 A4 page, complex", 49: "simple mental arithmetic", 50: "short messages on phone", 51: "social media", 52: "TV",
+ 53: "focus, 10 min", 54: "focus, 2 h", 55: "full working day"}
+F55_BEFORE = {  # mapping until the V1 close, kept as note for traceability
+ 1: "PF2, PF1", 2: "PF1", 3: "PF1", 4: "PF1", 5: "PF1", 6: "PF1", 7: "PF1", 8: "PF2", 9: "PF2", 10: "PF2", 11: "PF2",
+ 12: "PF2, PF3", 13: "PF3", 14: "PF3", 15: "PF1", 16: "PF1", 17: "PF1", 18: "PF1", 19: "PF1", 20: "PF1, PF3",
+ 21: "PF3, PF1", 22: "PF1, PF3", 23: "PF1, PF3", 24: "PF1, PF3", 25: "PF1, PF3", 26: "CG7", 27: "CG4, CG7",
+ 28: "CG4, CG7, CG1", 29: "CG7", 30: "CG4, CG7, CG2", 31: "CG4, CG7, CG1", 32: "CG4, CG7, CG2, SN2", 33: "PF2",
+ 34: "PF2, PF1", 35: "PF2, PF1, PF3", 36: "PF2, PF1", 37: "PF1, SN3", 38: "PF1, PF2, SN3", 39: "PF3, PF2", 40: "SN1",
+ 41: "SN1", 42: "SN1", 43: "SN2", 44: "SN2", 45: "SN2", 46: "CG4", 47: "CG4, CG1", 48: "CG4", 49: "CG8", 50: "CG7",
+ 51: "CG4, CG7", 52: "CG4, CG1, SN1, SN2", 53: "CG1", 54: "CG1", 55: "CG1"}
+def f55_domain(i):
+    return ITEMS[("FUNCAP55", str(i))][3][0]
+assert sorted(F55_LOAD) == list(range(1, 56)) and all(f55_domain(i) in LOAD_TYPE for i in F55_LOAD)
+assert {r[7] for r in ITEMS.values() if r[1] == "FUNCAP55"}.__len__() == 1, "FUNCAP items must share one response scale"
+F55_ITEMS = [("FUNCAP55", i, None, "EN6", f"load type: {LOAD_TYPE[f55_domain(i)][0]}; load: {F55_LOAD[i]}", "",
+              f"Cost item (domain {f55_domain(i)}). Until V1 close: {F55_BEFORE[i]}") for i in range(1, 56)]
+# Cost node: identical in Sec Function (home, construct FUN) and Sec Energy (second path)
+COST_NODE = [("N3", "N1", 2, "Which activities does '<score name>' rate the cost of?", LOAD_TYPE["A"][1], "leaf",
+              f"EN6 [load type: {LOAD_TYPE['A'][0]}]")]
+COST_NODE += [("N3", "N1", 2, None, txt, "leaf", f"EN6 [load type: {val}]") for k, (val, txt) in LOAD_TYPE.items() if k != "A"]
+COST_NODE += [("N3", "N1", 2, None, "What activities cost me in general", "leaf", "EN6 [load type: unspecified]"),
+              ("N3", "N1", 2, None, "It changes – I say which activity at each check-in", "leaf",
+               "EN6 [load type: per check-in] (facet per check-in)"),
+              ("N3", "N1", 2, None, "Several of these", "multi-select", "composite")]
+
 SECTIONS = []
 
 # ---------------------------------------------------------------- SLEEP
@@ -64,7 +113,7 @@ SECTIONS.append(dict(
 # ------------------------------------------------------------ COGNITION
 SECTIONS.append(dict(
  tab="Sec Cognition", title="Section: Cognition", prefix="CG",
- intro="Cross-instrument stress test: DSQ-1 (symptoms, past 6 months) vs FUNCAP55/27 (activity cost, last month). FUNCAP27 items are a subset of FUNCAP55 (column 'FUNCAP27 #').",
+ intro="Instruments: DSQ-2 (cognitive symptoms, frequency + severity, past 6 months). FUNCAP domains E (communication) and H (concentration) were mapped here until the V1 close; they are cost items and now map to EN6 (Energy) with cognition as the facet 'load type'.",
  granules=[
   ("CG1","Sustained attention","Keeping attention on one thing over a period of time.","Staying focused on one thing"),
   ("CG2","Divided attention","Attending to more than one thing at once (e.g. several speakers, task + interruption).","Following several things at once"),
@@ -73,7 +122,6 @@ SECTIONS.append(dict(
   ("CG5","Memory","Retaining and recalling information; everyday forgetting.","Remembering things"),
   ("CG6","Word finding","Retrieving the right word when speaking or writing.","Finding the right words"),
   ("CG7","Expression","Putting thoughts into spoken or written language.","Putting thoughts into words"),
-  ("CG8","Mental manipulation","Holding information in mind and working with it (e.g. mental arithmetic).","Working things out in my head"),
   ("CG9","Confusion / disorientation","Losing orientation or the thread: not knowing where/when, feeling muddled.","Feeling confused or disoriented"),
  ],
  items=[
@@ -88,23 +136,6 @@ SECTIONS.append(dict(
   ("DSQ-2",78,None,"CG9","","","New in DSQ-2; first item for CG9"),
   ("DSQ-2",79,None,"CG3","modality: speaking; quality: slowed","","New in DSQ-2. Decided CG3 only: item measures output RATE, CG7 is formulation (what is said). Pauses from word finding would be CG6, which was never mapped either → CG7 was inconsistent. Motor slowing (dysarthria) checked in Neuromuscular: no speech-motor item in any instrument, DSQ places it in the neurocognitive block → stays CG3"),
   ("DSQ-2",80,None,"CG4, EN4","modality: reading; trigger: mild physical or mental activity","yes","New in DSQ-2; reading difficulty as PEM consequence"),
-  ("FUNCAP55",26,None,"CG7","modality: speaking; load: minimal","","At this load mainly energy/motor cost"),
-  ("FUNCAP55",27,12,"CG4, CG7","modality: conversation; load: 5 min","yes",""),
-  ("FUNCAP55",28,None,"CG4, CG7, CG1","modality: conversation; load: 30 min","yes",""),
-  ("FUNCAP55",29,None,"CG7","modality: handwriting; load: short","","Also fine-motor demand"),
-  ("FUNCAP55",30,13,"CG4, CG7, CG2","modality: conversation (3 people); load: 30 min","yes",""),
-  ("FUNCAP55",31,None,"CG4, CG7, CG1","modality: conversation; load: 1 h","yes","Also social/physical context"),
-  ("FUNCAP55",32,14,"CG4, CG7, CG2","modality: conversation (group)","yes","Also noise, being upright → multi-section composite"),
-  ("FUNCAP55",46,22,"CG4","modality: reading (screen); load: minimal","",""),
-  ("FUNCAP55",47,None,"CG4, CG1","modality: reading; load: open","yes",""),
-  ("FUNCAP55",48,23,"CG4","modality: reading; load: 1 A4 page, complex","",""),
-  ("FUNCAP55",49,None,"CG8","load: simple","",""),
-  ("FUNCAP55",50,None,"CG7","modality: writing (screen); load: short","",""),
-  ("FUNCAP55",51,24,"CG4, CG7","modality: reading + writing (screen)","yes",""),
-  ("FUNCAP55",52,None,"CG4, CG1","modality: audiovisual (screen)","yes","Also light/sound → Sensory section"),
-  ("FUNCAP55",53,25,"CG1","load: 10 min","",""),
-  ("FUNCAP55",54,26,"CG1","load: 2 h","",""),
-  ("FUNCAP55",55,27,"CG1","load: full working day","yes","Global cognitive endurance + sitting; CG1 as nearest granule"),
  ],
  boundary=[
   ("DSQ-2",41,"DSQ-1: 41 (part)","→ Sensory/vision","Visual focus; split from DSQ-1 41"),
@@ -114,7 +145,7 @@ SECTIONS.append(dict(
   ("DSQ-1",34,None,"→ Sensory","Noise sensitivity"),
   ("DSQ-1",35,None,"→ Sensory","Light sensitivity"),
   ("DSQ-1",42,None,"→ Sensory/vision","Depth perception"),
-  ("FUNCAP55","40–45","19–21","→ Sensory","Domain G (light and sound) – tolerance, not cognition"),
+  ("FUNCAP55","26–32, 46–55",None,"→ Energy","Cost items (domains E, H): the answer is what the activity costs (energy budget, EN6), not how well one understands or speaks. Cognition = facet 'load type'. Until V1 close: CG1/CG2/CG4/CG7/CG8"),
   ("DSQ-1",71,None,"excluded","Pre-onset history checklist ('Impaired memory and concentration'), not an outcome"),
   ("RAND-36 v1",19,None,"excluded","'as carefully as usual' attributed to emotional problems; too unspecific"),
   ("Bell CFIDS Disability Scale","90/20/10",None,"→ Global","Single global item; cognition only as anchor wording in levels"),
@@ -123,7 +154,7 @@ SECTIONS.append(dict(
   ("N0","—",0,"Which category fits '<score name>'?","Thinking / cognition","N1",""),
   ("N1","N0",1,"When you give '<score name>' a high value, what are you rating?","My concentration","N2",""),
   ("N1","N0",1,None,"How fast and clearly I think and understand","N3",""),
-  ("N1","N0",1,None,"My memory","N4",""),
+  ("N1","N0",1,None,"My memory","leaf","CG5"),
   ("N1","N0",1,None,"Language: words and expressing myself","N5",""),
   ("N1","N0",1,None,"How mentally exhausted I get","→ EN","(redirect)"),
   ("N1","N0",1,None,"General brain fog / a mix of several","multi-select","composite"),
@@ -134,30 +165,28 @@ SECTIONS.append(dict(
   ("N3","N1",2,None,"Understanding what I read or hear","leaf","CG4"),
   ("N3","N1",2,None,"Feeling confused or disoriented","leaf","CG9"),
   ("N3","N1",2,None,"A mix of several of these","multi-select","composite"),
-  ("N4","N1",2,"Which one does '<score name>' measure?","Remembering things","leaf","CG5"),
-  ("N4","N1",2,None,"Working things out in my head","leaf","CG8"),
-  ("N4","N1",2,None,"Both together","multi-select","composite"),
   ("N5","N1",2,"Which one does '<score name>' measure?","Finding the right words","leaf","CG6"),
   ("N5","N1",2,None,"Putting thoughts into words","leaf","CG7"),
   ("N5","N1",2,None,"Both together","multi-select","composite"),
  ],
  findings=[
-  "• DSQ (symptoms) and FUNCAP (activities) map onto the same granules. CG1, CG2, CG4, CG7 covered by both; CG3, CG5, CG6 DSQ only; CG8 FUNCAP only; CG9 DSQ-2 only (78, new).",
-  "• Granule = underlying ability. DSQ asks how impaired it is, FUNCAP what using it costs → compatible by concept, not by value.",
-  "• FUNCAP items are mostly composites (activities bundle abilities). Clean 1:1: 46, 48, 49, 50, 53, 54 (+ 26, 29). Facets 'load' and 'modality' keep their differences.",
+  "• Section is DSQ-only since the V1 close (2 Nov 2026). CG9 DSQ-2 only (78, new).",
+  "• FUNCAP E/H moved to EN6: FUNCAP asks what an activity COSTS (stem 'What are the consequences …', scale 0–6 consequences). A person with poor comprehension but no energy problem answers 6. Cognition only raises the demand of the activity → facet 'load type', not the measured variable.",
+  "• CG8 (mental manipulation) removed: its only item was F55-49 (user decision 2 Nov 2026). 'My memory' is now a direct leaf (CG5).",
   "• Mental fatigability and PEM after mental effort → Energy (tree redirects); light/noise and vision → Sensory.",
  ]))
 
 # --------------------------------------------------------------- ENERGY
 SECTIONS.append(dict(
  tab="Sec Energy", title="Section: Energy, fatigue and PEM", prefix="EN",
- intro="Instruments: DSQ-1 (symptom grid, PEM block, 1–100 energy ratings), RAND-36 Energy/fatigue scale. FUNCAP's response scale itself encodes PEM cost, but its items are activities → mapped in the Function section.",
+ intro="Instruments: DSQ-1 (symptom grid, PEM block, 1–100 energy ratings), RAND-36 Energy/fatigue scale, FUNCAP55 (all 55 items, since the V1 close): FUNCAP asks what an activity COSTS (0–6 consequence scale) → EN6 activity tolerance / energy budget; the activity is the facet 'load type' (domain A–H) + 'load'.",
  granules=[
   ("EN1","Fatigue / energy level","How tired vs. energetic one feels overall; fatigue and available energy are the two poles of one axis.","How tired or energetic I feel"),
   ("EN2","Physical fatigability","Tiring unusually fast DURING physical effort.","Running out of steam while doing something physical"),
   ("EN3","Mental fatigability","Tiring unusually fast DURING mental effort.","Running out of steam while thinking or concentrating"),
   ("EN4","Post-exertional malaise (crash)","Worsening of symptoms AFTER exertion, often delayed, slow recovery.","How bad my crash is after doing too much"),
   ("EN5","Energy used / activity amount","How much energy was spent or how much was done.","How much I did"),
+  ("EN6","Activity tolerance / energy budget","How much activity one can do before it costs something: fewer other activities the same day, or reduced capacity in the following days. Measured as the cost of a given activity (FUNCAP). Cause of fatigability (EN2/EN3) and crashes (EN4), not the same as them.","What an activity costs me"),
  ],
  items=[
   ("DSQ-1",13,None,"EN1","pole: fatigue","",""),
@@ -185,6 +214,7 @@ SECTIONS.append(dict(
   ("RAND-36 v1",27,None,"EN1","pole: energy","",""),
   ("RAND-36 v1",29,None,"EN1","pole: fatigue","",""),
   ("RAND-36 v1",31,None,"EN1","pole: fatigue","",""),
+  *F55_ITEMS,
  ],
  boundary=[
   ("DSQ-1",72,None,"excluded","Characteristic of fatigue (relieved by rest?), used by case definitions; not a trackable level"),
@@ -201,10 +231,12 @@ SECTIONS.append(dict(
   ("N1","N0",1,None,"How fast I run out of steam while doing something","N2",""),
   ("N1","N0",1,None,"How bad my crash is after doing too much","leaf","EN4"),
   ("N1","N0",1,None,"How much I did / how much energy I used","leaf","EN5"),
+  ("N1","N0",1,None,"What an activity costs me (energy budget)","N3",""),
   ("N1","N0",1,None,"A mix of several of these","multi-select","composite"),
   ("N2","N1",2,"While doing what?","Something physical","leaf","EN2"),
   ("N2","N1",2,None,"Thinking or concentrating","leaf","EN3"),
   ("N2","N1",2,None,"Both","multi-select","composite"),
+  *COST_NODE,
  ],
  findings=[
   "• Key boundary is TIMING: tiring during effort (EN2/EN3, fatigability) vs. worsening after effort (EN4, PEM). The DSQ's 'PEM' block mixes both; mapped by mechanism, not by DSQ heading.",
@@ -212,6 +244,9 @@ SECTIONS.append(dict(
   "• Depth: mostly category + 1 question; EN2/EN3 need a second. 'Crash' is the community term and clearer than 'PEM'.",
   "• PEM facets: trigger (physical/mental), timing (delay), duration. Not asked; set only if the score name specifies them.",
   "• DSQ-2 adds graded PEM items (76, 77: frequency/severity instead of yes/no) and muscle fatigue (75). All fit EN2/EN4; no split.",
+  "• EN6 (V1 close, 2 Nov 2026): FUNCAP measures the cost of an activity: x = f(θ_budget − d(activity, abilities)) + ε. Abilities (cognition, senses, body) raise the demand d, but only show up when the budget is limited → they are the facet 'load type', not the measured variable. All 55 items share stem and 0–6 scale (checked against 'Instrument items'). Graded item type: one θ, the activity sets the difficulty.",
+  "• Scale level 0 'I cannot do this' is ability, not cost (accepted, noted). Load type is asked (= FUNCAP domain → sub-score); the user may leave it open and name the activity per check-in ('per check-in' leaf).",
+  "• Home of the cost node is Daily functioning (FUN, how studies report FUNCAP); second path here under Energy.",
  ]))
 
 # ----------------------------------------------------------------- PAIN
@@ -270,7 +305,7 @@ SECTIONS.append(dict(
 # ------------------------------------------------------- SENSORY & VISION
 SECTIONS.append(dict(
  tab="Sec Sensory", title="Section: Sensory and vision", prefix="SN",
- intro="Instruments: DSQ-2 (sensitivity and vision symptoms), FUNCAP55/27 domain G (cost of light and sound exposure). RAND-36 and Bell have no sensory items. Each sense is its own granule (different sensation); stimulus strength/duration is the facet 'load'.",
+ intro="Instruments: DSQ-2 (sensitivity and vision symptoms). FUNCAP domain G (light and sound) was mapped here until the V1 close; it is a set of cost items and now maps to EN6 (Energy) with 'load type: light and sound'. RAND-36 and Bell have no sensory items. Each sense is its own granule (different sensation).",
  granules=[
   ("SN1","Light sensitivity","Light that others find normal is unpleasant, straining or makes symptoms worse.","Being bothered by light"),
   ("SN2","Noise sensitivity","Sounds that others find normal are unpleasant, straining or make symptoms worse.","Being bothered by noise"),
@@ -286,16 +321,9 @@ SECTIONS.append(dict(
   ("DSQ-2",41,"DSQ-1: 41 (part)","SN4","","","Split from DSQ-1 41 (vision and/or attention); attention part = DSQ2-42 → CG1"),
   ("DSQ-2",70,None,"SN4","trigger: standing; quality: blurred or tunnel","","New in DSQ-2. Sensation = SN4, standing = trigger facet. Mechanism orthostatic → listed in Autonomic for coverage"),
   ("DSQ-1",42,None,"SN5","","",""),
-  ("FUNCAP55",40,None,"SN1","load: dim light, 30 min","",""),
-  ("FUNCAP55",41,19,"SN1","load: normal indoor light, 1 h","",""),
-  ("FUNCAP55",42,20,"SN1","load: daylight, 2 h","",""),
-  ("FUNCAP55",43,None,"SN2","load: quiet conversation","","Also listening (CG4) at low load; noise is the stated domain"),
-  ("FUNCAP55",44,21,"SN2","load: noisy environment, 1 h","",""),
-  ("FUNCAP55",45,None,"SN2","load: high noise (cinema, concert)","yes","Also outing, sitting upright → multi-section composite"),
-  ("FUNCAP55",32,14,"CG4, CG7, CG2, SN2","modality: conversation (group)","yes","Primary in Cognition; SN2 added for noise"),
-  ("FUNCAP55",52,None,"CG4, CG1, SN1, SN2","modality: audiovisual (screen)","yes","Primary in Cognition; screen light + sound"),
  ],
  boundary=[
+  ("FUNCAP55","40–45",None,"→ Energy","Cost items (domain G): what staying in light/noise costs (EN6), facet 'load type: light and sound'. Until V1 close: SN1/SN2"),
   ("DSQ-1",27,None,"→ Pain","Eye pain: stays PN1 [region: eyes]; tree redirects"),
   ("DSQ-2",81,None,"→ Pain","Aching of/behind the eyes: stays PN1 [region: eyes]"),
   ("DSQ-2",82,None,"→ Pain","Pain sensitivity: stays PN4 (pain, not a sense)"),
@@ -323,8 +351,8 @@ SECTIONS.append(dict(
   ("N3","N1",2,None,"Both together","multi-select","composite"),
  ],
  findings=[
-  "• Granule = sense, not stimulus strength. FUNCAP G grades load (dim → daylight, quiet → concert); this is the facet 'load', like in Cognition. DSQ asks severity, FUNCAP cost → same granule, values not comparable (measure type rule).",
-  "• SN1, SN2 covered by DSQ + FUNCAP; SN3, SN4, SN5 DSQ only. No RAND-36/Bell coverage.",
+  "• Granule = sense. FUNCAP G (dim light → daylight, quiet → concert) asks what the exposure COSTS → EN6 since the V1 close; DSQ asks how much light/noise bothers → SN1/SN2.",
+  "• SN1–SN5 DSQ only. No RAND-36/Bell coverage.",
   "• Smell/chemical items are NOT a sense granule: 'make you feel sick' = intolerance reaction → Immune. Tree still offers 'Smells or chemicals' and redirects, because users will look for it here.",
   "• DSQ2-70 (blurred/tunnel vision after standing): sensation is SN4, standing is a trigger facet. A plain 'blurred vision' score matches 41 and 70 (missing facet ≠ mismatch). Listed again in Autonomic for coverage (same mapping).",
   "• Eye pain stays in Pain; tree reaches it via a cross-section leaf. Depth: category + 2 questions everywhere.",
@@ -335,7 +363,7 @@ SECTIONS.append(dict(
 _SC, _HW, _OUT = "activity: self-care", "activity: housework", "activity: outing"
 SECTIONS.append(dict(
  tab="Sec Function", title="Section: Physical function", prefix="PF",
- intro="Instruments: FUNCAP55/27 domains A–D, F (cost of activities), RAND-36 Physical functioning (limitation) and Role-physical, DSQ-2 function/behaviour items. FUNCAP E/G/H are mapped in Cognition and Sensory. Granules = type of physical load (upright, walking, exertion) plus participation level and pacing; the concrete activity is the facet 'activity'.",
+ intro="Instruments: RAND-36 Physical functioning (limitation) and Role-physical, DSQ-2 function/behaviour items. FUNCAP (all domains) measures the COST of activities and maps to EN6 (Energy) since the V1 close; this tree reaches EN6 via 'What an activity costs me'. Granules = type of physical load (upright, walking, exertion) plus participation level and pacing.",
  granules=[
   ("PF1","Upright tolerance","Being able to sit or stand upright for a while without symptoms forcing you to lie down.","How long I can sit or stand before I must lie down"),
   ("PF2","Walking / moving around","Moving on foot; distance, stairs and terrain are the facet 'load'.","How far I can walk"),
@@ -344,38 +372,6 @@ SECTIONS.append(dict(
   ("PF5","Pacing","Deliberately keeping activity below one's limit to avoid crashes (behaviour, not ability).","How well I stay within my limits"),
  ],
  items=[
-  ("FUNCAP55",1,None,"PF2, PF1",_SC+"; load: toilet","yes",""),
-  ("FUNCAP55",2,None,"PF1",_SC+"; load: minimal","","Self-care = upright tolerance only; PF3 (force) removed, user decision 1 Nov 2026"),
-  ("FUNCAP55",3,None,"PF1",_SC+"; load: showering seated, assisted","","Self-care = upright tolerance only; PF3 (force) removed, user decision 1 Nov 2026"),
-  ("FUNCAP55",4,None,"PF1",_SC+"; load: showering seated","","Self-care = upright tolerance only; PF3 (force) removed, user decision 1 Nov 2026"),
-  ("FUNCAP55",5,None,"PF1",_SC+"; load: showering standing","","Self-care = upright tolerance only; PF3 (force) removed, user decision 1 Nov 2026"),
-  ("FUNCAP55",6,None,"PF1","load: out of bed, 1 h","",""),
-  ("FUNCAP55",7,None,"PF1",_SC+"; load: dressing","","Self-care = upright tolerance only; PF3 (force) removed, user decision 1 Nov 2026"),
-  ("FUNCAP55",8,None,"PF2","load: room to room","",""),
-  ("FUNCAP55",9,None,"PF2","load: 100 m","",""),
-  ("FUNCAP55",10,None,"PF2","load: 100 m – 1 km","",""),
-  ("FUNCAP55",11,None,"PF2","load: 1 km level","",""),
-  ("FUNCAP55",12,None,"PF2, PF3","load: 1 km hilly","yes","Hilly terrain adds exertion"),
-  ("FUNCAP55",13,None,"PF3","activity: exercise; load: raised heart rate, 15 min","",""),
-  ("FUNCAP55",14,None,"PF3","activity: exercise; load: raised heart rate, 30 min","",""),
-  ("FUNCAP55",15,None,"PF1","load: sitting in bed, 30 min","",""),
-  ("FUNCAP55",16,None,"PF1","load: chair, 10 min","",""),
-  ("FUNCAP55",17,None,"PF1","load: chair, 2 h","",""),
-  ("FUNCAP55",18,None,"PF1","load: standing, 5 min","",""),
-  ("FUNCAP55",19,None,"PF1","load: standing, 30 min","",""),
-  ("FUNCAP55",20,None,"PF1, PF3",_HW+"; load: light, 30 min","yes",""),
-  ("FUNCAP55",21,None,"PF3, PF1",_HW+"; load: heavy, 30 min","yes",""),
-  ("FUNCAP55",22,None,"PF1, PF3",_HW+"; load: laundry","yes",""),
-  ("FUNCAP55",23,None,"PF1, PF3",_HW+"; load: cold meal","yes",""),
-  ("FUNCAP55",24,None,"PF1, PF3",_HW+"; load: simple hot meal","yes",""),
-  ("FUNCAP55",25,None,"PF1, PF3",_HW+"; load: complex meal, 1 h","yes","Also planning/multitasking (cognitive), not mapped"),
-  ("FUNCAP55",33,None,"PF2",_OUT+"; load: stepping outside","","Threshold item for leaving home"),
-  ("FUNCAP55",34,None,"PF2, PF1",_OUT+"; load: necessary errand","yes",""),
-  ("FUNCAP55",35,None,"PF2, PF1, PF3",_OUT+"; load: grocery shopping","yes","Carrying; also noise (SN2)"),
-  ("FUNCAP55",36,None,"PF2, PF1",_OUT+"; load: leisure (café, shopping)","yes","Also noise, social → multi-section composite"),
-  ("FUNCAP55",37,None,"PF1, SN3",_OUT+"; load: car passenger, 15 min","yes","Sitting upright + vibration"),
-  ("FUNCAP55",38,None,"PF1, PF2, SN3",_OUT+"; load: public transport","yes",""),
-  ("FUNCAP55",39,None,"PF3, PF2",_OUT+"; activity: exercise; load: organised classes/sports","yes",""),
   ("RAND-36 v1",3,None,"PF3","activity: exercise; load: vigorous","",""),
   ("RAND-36 v1",4,None,"PF3",_HW+"; load: moderate","","Examples mix housework and sport"),
   ("RAND-36 v1",5,None,"PF3","load: lifting/carrying groceries","",""),
@@ -408,12 +404,12 @@ SECTIONS.append(dict(
   ("DSQ-2",90,None,"→ Autonomic","Inability to tolerate upright position = symptom behind PF1; composite there"),
   ("DSQ-1",33,None,"→ Neuromuscular","Muscle weakness"),
   ("DSQ-2",86,None,"→ Neuromuscular","Poor coordination"),
-  ("FUNCAP55","26–32, 40–55",None,"done","Domains E, G, H mapped in Cognition / Sensory"),
+  ("FUNCAP55","1–25, 33–39",None,"→ Energy","Cost items (domains A–D, F): EN6 with facet 'load type'. Until V1 close: PF1/PF2/PF3/SN3"),
  ],
  tree=[
   ("N0","—",0,"Which category fits '<score name>'?","Physical activity and daily function","N1",""),
   ("N1","N0",1,"When you give '<score name>' a high value, what are you rating?","What my body can manage physically","N2",""),
-  ("N1","N0",1,None,"A specific everyday activity","N3",""),
+  ("N1","N0",1,None,"What an activity costs me (energy budget)","N3",""),
   ("N1","N0",1,None,"How much my health limits my work or daily life","leaf","PF4"),
   ("N1","N0",1,None,"How well I stay within my limits (pacing)","leaf","PF5"),
   ("N1","N0",1,None,"How much I did","leaf","EN5 (redirect)"),
@@ -422,16 +418,12 @@ SECTIONS.append(dict(
   ("N2","N1",2,None,"How far I can walk","leaf","PF2"),
   ("N2","N1",2,None,"How much physical effort I can manage","leaf","PF3"),
   ("N2","N1",2,None,"A mix of several of these","multi-select","composite"),
-  ("N3","N1",2,"Which activity?","Washing, dressing, toilet","leaf","PF1 [activity: self-care]"),
-  ("N3","N1",2,None,"Housework or cooking","leaf","PF1, PF3 [activity: housework]"),
-  ("N3","N1",2,None,"Getting out of the house (errands, shopping, transport)","leaf","PF1, PF2 [activity: outing]"),
-  ("N3","N1",2,None,"Exercise or sport","leaf","PF3 [activity: exercise]"),
-  ("N3","N1",2,None,"Several of these","multi-select","composite"),
+  *COST_NODE,
  ],
  findings=[
-  "• Activities are not granules: showering, cooking, shopping bundle the same few physical loads. Granules = load type (PF1 upright, PF2 walking, PF3 exertion); the activity becomes the facet 'activity'. Most FUNCAP A/D/F items are therefore composites.",
-  "• 'activity' is an ASKED facet (N3): within PF1/PF3 the FUNCAP items differ mainly by activity, same logic as pain region. A score 'could shower' maps to self-care items only, not to all PF1/PF3 items.",
-  "• Three measure types meet: FUNCAP = cost, RAND-36 PF = limitation (3 levels), DSQ = binary/hours. Same granule, values not comparable.",
+  "• V1 close (2 Nov 2026): FUNCAP items are COST items, not ability items. All 55 map to EN6 (activity tolerance / energy budget); the activity kind is the asked facet 'load type' (= FUNCAP domain A–H), its size the facet 'load'. N3 ('What an activity costs me') asks the load type; the user may also leave it open and name the activity per check-in.",
+  "• Before: FUNCAP A/D/F were composites on PF1/PF2/PF3 with the asked facet 'activity'. Dropped: a person with a weak body but no energy problem would score them as healthy.",
+  "• Measure types left in this section: RAND-36 PF = limitation (3 levels), DSQ = binary/hours.",
   "• PF4 (participation) ≠ PF1–3 (capacity): RAND-36 Role-physical and DSQ reduction items say how much less one does, not what the body can do.",
   "• Pacing (PF5) is behaviour; kept because users track it. Hours per activity (DSQ2-119) and exercising yes/no → EN5 'how much I did'.",
   "• Upright tolerance (PF1) is the capacity side of orthostatic intolerance; the symptom side (DSQ2-90, 69–71) follows in Autonomic.",
@@ -500,7 +492,7 @@ SECTIONS.append(dict(
   "• 'After standing' items (69, 70, 71) are mapped to their sensation (AU3, SN4, AU2) with trigger: standing. A plain 'heart racing' score matches 52 and 69 (missing facet ≠ mismatch). AU1 is the only granule for upright intolerance itself (DSQ2-90).",
   "• AU8 is an asked facet (N4): bladder items differ only by quality/timing, same logic as pain region.",
   "• Objective wearable data (heart rate, HRV) is not a symptom and has no DSQ item; the tree offers it as its own leaf (N2) on AU3 as nearest granule, flagged 'measured, not rated' (never pooled with DSQ values).",
-  "• Section is DSQ-only: no capacity/limitation items (FUNCAP C upright items are PF1).",
+  "• Section is DSQ-only: no capacity/limitation items (FUNCAP C upright items are cost items, EN6).",
   "• Step 14: AU1 worded as symptom ('How unwell I get when sitting or standing upright'), PF1 as capacity ('How long I can sit or stand before I must lie down'). In the full tree AU1–AU4 form the construct 'Heart, circulation and breathing' (own N0 option); AU5–AU8 stay under 'Other body symptoms'.",
  ]))
 
@@ -524,7 +516,7 @@ SECTIONS.append(dict(
   ("DSQ-2",75,None,"→ Energy","Muscle fatigue after mild activity = fatigability (EN2), not weakness"),
   ("DSQ-1",25,None,"→ Pain","Muscle pain stays PN1 [region: muscles]; tree redirects"),
   ("DSQ-2",79,None,"→ Cognition","Slowed speech: checked, stays CG3 (no speech-motor item)"),
-  ("FUNCAP55",29,None,"→ Cognition","Handwriting: fine-motor demand noted there, mapped CG7"),
+  ("FUNCAP55",29,None,"→ Energy","Handwriting: cost item, EN6 [load type: communication]"),
  ],
  tree=[
   ("N0","—",0,"Which category fits '<score name>'?","Muscles and movement","N1",""),
@@ -839,6 +831,24 @@ if not any(c.value == "Facet 'activity'" for c in m["A"]):
     m.cell(rr, 1, "Facet 'activity'").font = copy.copy(m["A4"].font)
     m.cell(rr, 2, "Added after Function: concrete everyday activity (self-care, housework, outing, exercise). Activities are not granules; they bundle load types (PF1–3). Asked in the Function tree (N3).")
     m.cell(rr, 2).alignment = Alignment(wrap_text=True, vertical="top")
+
+# ---------------- V1 close (2 Nov 2026): FUNCAP = cost items. Upsert: rewrite existing rules, append new ones.
+def upsert(key, text):
+    for c in m["A"]:
+        if c.value == key:
+            m.cell(c.row, 2, text); return
+    rr = m.max_row + 1
+    m.cell(rr, 1, key).font = copy.copy(m["A4"].font); m.cell(rr, 2, text)
+    m.cell(rr, 2).alignment = Alignment(wrap_text=True, vertical="top")
+upsert("Measure type", "Recorded per item: symptom load (frequency + severity, DSQ), cost of an activity (FUNCAP), limitation / level / frequency (RAND-36), global level (Bell), change (PGIC). "
+       "Format facets (measure, pole, timeframe) keep the meaning; values are not comparable across instruments. EXCEPTION (V1 close): a measure type that changes the measured VARIABLE is not a format – FUNCAP 'cost' measures the energy budget (EN6), not the ability named by the activity.")
+upsert("Facet 'activity'", "Superseded (V1 close, 2 Nov 2026): no longer asked. Kept on RAND-36/DSQ items as description. The kind of activity of FUNCAP items is the asked facet 'load type'.")
+upsert("Asked facets", "A facet is asked in the tree only when it is context and separates the items below the node (rule R3). Asked today: region (Pain), load type (cost node, EN6), bladder (AU8), sweating.")
+upsert("Cost items (FUNCAP)", "V1 close, 2 Nov 2026: every FUNCAP item asks what an activity COSTS (same stem, same 0–6 consequence scale; checked for all 55). "
+       "Model x = f(θ_budget − d(activity, abilities)) + ε. All 55 items map to EN6 only (no exceptions); abilities named by the activity (cognition, light/noise, walking …) are the facet 'load type', not granules. Item type: graded (one θ, the activity sets the difficulty).")
+upsert("Facet 'load type'", "Kind of activity of a cost item = FUNCAP domain (self-care, walking and exercise, upright, housework, communication, outside home, light and sound, concentration). Context facet, asked at the cost node. "
+       "The user may fix it at mapping time or leave it open ('per check-in'): then the activity is named per check-in (configuration option in the app).")
+upsert("Granule removed: CG8", "Mental manipulation (CG8) removed at the V1 close: its only item F55-49 is a cost item (EN6).")
 
 wb.save(WB)
 print(wb.sheetnames)
